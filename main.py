@@ -3,8 +3,6 @@ from sort_array import SortArray
 from algorithms import *
 
 
-print(merge_sort(range(21)))
-
 window = pyglet.window.Window(
     width=1280,
     height=720,

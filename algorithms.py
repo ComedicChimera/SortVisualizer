@@ -33,39 +33,3 @@ def radix_sort(arr):
         yield arr, []
 
         it += 1
-
-
-def merge_sort(arr):
-    def merge(a, b):
-        odd = None
-        if len(a) > len(b):
-            odd = a.pop()
-        elif len(a) < len(b):
-            odd = b.pop()
-
-        merged_set = []
-
-        for i, j in zip(a, b):
-            if i > j:
-                merged_set.extend([j, i])
-            else:
-                merged_set.extend([i, j])
-
-        if odd:
-            if merged_set[-1] < odd:
-                merged_set.append(odd)
-            else:
-                merged_set.extend([odd, merged_set.pop()])
-
-        return merged_set
-
-    pool = list(map(list, zip(*[iter(arr)] * 2)))
-    if len(arr) % 2 != 0:
-        pool[-1].append(arr[-1])
-
-    while len(pool) > 1:
-        for i in range(0, len(pool), 2):
-            if i + 1 < len(pool):
-                pool[i] = merge(pool[i], pool[i+1])
-
-        pool = [pool[i] for i in range(0, len(pool)) if i % 2 != 0]
