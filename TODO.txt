@@ -1,6 +1,4 @@
-cycle sort
 stooge sort
-pancake sort
 heap sort
 gnome sort
 bogo sort

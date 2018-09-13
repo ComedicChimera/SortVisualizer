@@ -25,8 +25,6 @@ namespace Sort {
 
 			arr.swap(i, high);
 
-			arr.draw(i, high);
-
 			return i;
 		};
 

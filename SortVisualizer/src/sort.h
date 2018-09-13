@@ -18,4 +18,8 @@ namespace Sort {
 	void insertionSort(SortArray&);
 
 	void mergeSort(SortArray&);
+
+	void pancakeSort(SortArray&);
+
+	void cycleSort(SortArray&);
 }

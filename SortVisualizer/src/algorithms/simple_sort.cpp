@@ -41,4 +41,22 @@ namespace Sort {
 
 		arr.draw(0);
 	}
+
+	void pancakeSort(SortArray &arr) {
+		auto reverse = [&](int start) {
+			for (int i = 0; i < (arr.size - start) / 2; i++) {
+				arr.swap(i + start, arr.size - (i + 1));
+
+				arr.draw(2, i + start, arr.size - (i + 1));
+			}
+		};
+
+		for (int i = 0; i < arr.size; i++) {
+			int minNdx = min(arr, i);
+			reverse(minNdx);
+			reverse(i);
+		}
+
+		arr.draw(0);
+	}
 }

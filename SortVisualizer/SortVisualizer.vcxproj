@@ -126,6 +126,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\algorithms\cycle_sort.cpp" />
     <ClCompile Include="src\algorithms\insertion_sort.cpp" />
     <ClCompile Include="src\algorithms\merge_sort.cpp" />
     <ClCompile Include="src\algorithms\quick_sort.cpp" />

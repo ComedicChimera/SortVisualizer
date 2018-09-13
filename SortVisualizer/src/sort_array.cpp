@@ -72,7 +72,7 @@ void SortArray::draw(unsigned int count, ...) {
 	else
 		hasSelected = false;
 	
-	m_Window.clear();
+	m_Window.clear(sf::Color(90, 90, 90, 255));
 
 	for (int i = 0; i < size; i++) {
 		int value = m_Array[i];

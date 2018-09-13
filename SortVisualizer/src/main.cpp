@@ -9,9 +9,9 @@ int main() {
 
 	window.clear();
 
-	SortArray arr(window, 500, 1);
+	SortArray arr(window, 200, 25);
 
-	Sort::quickSort(arr);
+	Sort::cycleSort(arr);
 
 	while (window.isOpen()) {
 		sf::Event event;
