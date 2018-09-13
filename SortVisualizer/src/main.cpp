@@ -9,7 +9,7 @@ int main() {
 
 	window.clear();
 
-	SortArray arr(window, 200, 5);
+	SortArray arr(window, 500, 1);
 
 	Sort::quickSort(arr);
 

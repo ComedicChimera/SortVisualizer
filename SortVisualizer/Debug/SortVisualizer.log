@@ -1,5 +1,2 @@
 ﻿  main.cpp
-c:\users\forlo\desktop\coding\c++\sortvisualizer\sortvisualizer\src\sort.h(12): warning C4018: '<': signed/unsigned mismatch
-c:\users\forlo\desktop\coding\c++\sortvisualizer\sortvisualizer\src\sort.h(39): warning C4018: '<': signed/unsigned mismatch
-c:\users\forlo\desktop\coding\c++\sortvisualizer\sortvisualizer\src\sort.h(56): warning C4018: '<': signed/unsigned mismatch
   SortVisualizer.vcxproj -> C:\Users\forlo\Desktop\Coding\C++\SortVisualizer\Debug\SortVisualizer.exe
