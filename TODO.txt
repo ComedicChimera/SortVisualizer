@@ -1,7 +1,3 @@
-stooge sort
 heap sort
-gnome sort
-bogo sort
 shell sort
-cocktail shaker sort
 bitonic sort

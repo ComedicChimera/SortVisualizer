@@ -11,6 +11,11 @@ The current visualizer supports the following algorithms:
  - Quick Sort
  - Merge Sort
  - Insertion Sort
+ - Ripple Sort
+ - Gnome Sort
+ - Stooge Sort
+ - Pancake Sort
+ - Cycle Sort
  
 I will be adding more in the future as I get around to it.
 

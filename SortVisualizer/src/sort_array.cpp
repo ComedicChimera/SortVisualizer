@@ -101,11 +101,10 @@ void SortArray::draw(unsigned int count, ...) {
 void SortArray::shuffle() {
 	std::srand(std::time(NULL));
 
-	for (int i = 0; i < 50; i++) {
-		int randA = std::rand() % (size - 1),
-			randB = std::rand() % (size - 1);
+	for (int i = size - 1; i > 1; i--) {
+		int rand = std::rand() % i;
 
-		swap(randA, randB);
+		swap(i, rand);
 	}
 }
 

@@ -22,4 +22,10 @@ namespace Sort {
 	void pancakeSort(SortArray&);
 
 	void cycleSort(SortArray&);
+
+	void stoogeSort(SortArray&);
+
+	void gnomeSort(SortArray&);
+
+	void rippleSort(SortArray&);
 }
