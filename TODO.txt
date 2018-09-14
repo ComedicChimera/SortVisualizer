@@ -1,3 +1,0 @@
-heap sort
-shell sort
-bitonic sort

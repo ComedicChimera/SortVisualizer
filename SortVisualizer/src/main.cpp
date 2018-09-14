@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
 #include "constants.h"
 #include "sort.h"
@@ -9,9 +10,13 @@ int main() {
 
 	window.clear();
 
-	SortArray arr(window, 100, 1);
+	SortArray arr(window, 256, 1);
 
-	Sort::rippleSort(arr);
+	Sort::insertionSort(arr);
+
+	if (!arr.validate()) {
+		std::cout << "Failed to sort array." << std::endl;
+	}
 
 	while (window.isOpen()) {
 		sf::Event event;

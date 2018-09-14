@@ -11,7 +11,6 @@ class SortArray {
 	
 	unsigned int delay;
 
-	void shuffle();
 	void sleep();
 
 public:
@@ -20,8 +19,10 @@ public:
 
 	int &operator[](unsigned int);
 	void swap(int, int);
+	void shuffle();
 
 	void draw(unsigned int count, ...);
+	bool validate();
 
 	unsigned int size;
 };

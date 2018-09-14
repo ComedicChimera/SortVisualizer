@@ -111,3 +111,53 @@ void SortArray::shuffle() {
 void SortArray::sleep() {
 	std::this_thread::sleep_for(std::chrono::milliseconds(delay));
 }
+
+bool SortArray::validate() {
+	for (int mx = 0; mx < size - 1; mx++) {
+		m_Window.clear(sf::Color(90, 90, 90, 255));
+
+		if (m_Array[mx] > m_Array[mx + 1])
+			return false;
+
+		for (int i = 0; i < size; i++) {
+			int r = 255, g = 255, b = 255;
+
+			if (i < mx)
+				r = 0;
+			else if (i == mx) {
+				g = 0;
+				b = 0;
+			}
+
+			int value = m_Array[i];
+
+			sf::RectangleShape bar(sf::Vector2f(barWidth, barHeight * (m_Array[i] + 1)));
+
+			bar.setFillColor(sf::Color(r, g, b, 255));
+			bar.setPosition(sf::Vector2f(i * barWidth, HEIGHT - barHeight * (m_Array[i] + 1)));
+
+			m_Window.draw(bar);
+		}
+
+		m_Window.display();
+
+		sleep();
+	}
+
+	m_Window.clear(sf::Color(90, 90, 90, 255));
+
+	for (int i = 0; i < size; i++) {
+		int value = m_Array[i];
+
+		sf::RectangleShape bar(sf::Vector2f(barWidth, barHeight * (m_Array[i] + 1)));
+
+		bar.setFillColor(sf::Color(0, 255, 255, 255));
+		bar.setPosition(sf::Vector2f(i * barWidth, HEIGHT - barHeight * (m_Array[i] + 1)));
+
+		m_Window.draw(bar);
+	}
+
+	m_Window.display();
+
+	return true;
+}
