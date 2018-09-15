@@ -16,7 +16,8 @@ The current visualizer supports the following algorithms:
  - Stooge Sort
  - Pancake Sort
  - Cycle Sort
- 
+ - Heap Sort
+
 I will be adding more in the future as I get around to it.
 
 ## Requirements

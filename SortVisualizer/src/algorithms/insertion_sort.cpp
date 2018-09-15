@@ -10,6 +10,8 @@ namespace Sort {
 				int newValue = arr[i];
 				arr[i] = previousValue;
 				previousValue = newValue;
+
+				arr.draw(1, i);
 			}
 
 			arr[b] = value;

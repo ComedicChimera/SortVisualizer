@@ -1,21 +1,24 @@
 #pragma once
 
 #include <vector>
+#include <string>
 #include <SFML/Graphics.hpp>
 
 class SortArray {
 	int* m_Array;
 	sf::RenderWindow &m_Window;
 
-	float barWidth, barHeight;
+	float m_BarWidth, m_BarHeight;
 	
-	unsigned int delay;
+	unsigned int m_Delay;
 
-	void sleep();
+	const std::string m_Title;
+
+	void sleep(int delay);
+	void drawText();
 
 public:
-	SortArray(sf::RenderWindow&, unsigned int, unsigned int);
-	~SortArray();
+	SortArray(sf::RenderWindow&, unsigned int, unsigned int, const std::string&);
 
 	int &operator[](unsigned int);
 	void swap(int, int);

@@ -69,7 +69,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)build\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)intermediates\$(Configuration)\</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -126,22 +129,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\algorithms\cycle_sort.cpp" />
-    <ClCompile Include="src\algorithms\gnome_sort.cpp" />
-    <ClCompile Include="src\algorithms\insertion_sort.cpp" />
-    <ClCompile Include="src\algorithms\merge_sort.cpp" />
-    <ClCompile Include="src\algorithms\quick_sort.cpp" />
-    <ClCompile Include="src\algorithms\radix_sort.cpp" />
-    <ClCompile Include="src\algorithms\ripple_sort.cpp" />
-    <ClCompile Include="src\algorithms\simple_sort.cpp" />
-    <ClCompile Include="src\algorithms\stooge_sort.cpp" />
+    <ClCompile Include="src\Algorithms\cycle_sort.cpp" />
+    <ClCompile Include="src\Algorithms\gnome_sort.cpp" />
+    <ClCompile Include="src\Algorithms\heap_sort.cpp" />
+    <ClCompile Include="src\Algorithms\insertion_sort.cpp" />
+    <ClCompile Include="src\Algorithms\merge_sort.cpp" />
+    <ClCompile Include="src\Algorithms\quick_sort.cpp" />
+    <ClCompile Include="src\Algorithms\radix_sort.cpp" />
+    <ClCompile Include="src\Algorithms\ripple_sort.cpp" />
+    <ClCompile Include="src\Algorithms\simple_sort.cpp" />
+    <ClCompile Include="src\Algorithms\stooge_sort.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\sort_array.cpp" />
+    <ClCompile Include="src\SortArray\logic.cpp" />
+    <ClCompile Include="src\SortArray\render.cpp" />
+    <ClCompile Include="src\SortArray\sort_array.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\sort.h" />
     <ClInclude Include="src\constants.h" />
     <ClInclude Include="src\sort_array.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="data\arial.ttf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

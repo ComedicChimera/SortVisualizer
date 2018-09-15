@@ -10,9 +10,9 @@ int main() {
 
 	window.clear();
 
-	SortArray arr(window, 256, 1);
+	SortArray arr(window, 256, 1, "Radix Sort");
 
-	Sort::insertionSort(arr);
+	Sort::radixSort(arr);
 
 	if (!arr.validate()) {
 		std::cout << "Failed to sort array." << std::endl;

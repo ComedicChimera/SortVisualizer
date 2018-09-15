@@ -28,4 +28,6 @@ namespace Sort {
 	void gnomeSort(SortArray&);
 
 	void rippleSort(SortArray&);
+
+	void heapSort(SortArray&);
 }
