@@ -36,7 +36,7 @@ namespace Sort {
 				cycleNdx = lesserCount(arr[cycleStart], newItem);
 				item = newItem;
 
-				arr.draw(1, arr[cycleNdx]);
+				arr.draw(1, cycleNdx);
 			}
 		}
 

@@ -1,9 +1,12 @@
 # SortVisualizer
+
 A simple application for visualizing sorting algorithms written with C++ & SFML.
+
+<img src="image.png" width="640px" height="480px"/>
 
 ## Algorithms
 
-The current visualizer supports the following algorithms:
+The visualizer supports the following algorithms:
 
  - Bubble Sort
  - Selection Sort
@@ -19,8 +22,6 @@ The current visualizer supports the following algorithms:
  - Heap Sort
  - Shell Sort
  - Bitonic Sort
-
-I will be adding more in the future as I get around to it.
 
 ## Requirements
 

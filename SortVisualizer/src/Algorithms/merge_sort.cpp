@@ -29,7 +29,7 @@ namespace Sort {
 
 		for (int k = 0; k < sorted.size(); k++) {
 			arr[k + low] = sorted[k];
-			arr.draw(2, k + low, sorted[k]);
+			arr.draw(2, k + low);
 		}
 	}
 
