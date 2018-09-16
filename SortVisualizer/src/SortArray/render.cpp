@@ -64,8 +64,10 @@ bool SortArray::validate() {
 		for (int i = 0; i < size; i++) {
 			int r = 255, g = 255, b = 255;
 
-			if (i < mx)
+			if (i < mx) {
 				r = 0;
+				b = 0;
+			}
 			else if (i == mx) {
 				g = 0;
 				b = 0;
@@ -96,7 +98,7 @@ bool SortArray::validate() {
 
 		sf::RectangleShape bar(sf::Vector2f(m_BarWidth, m_BarHeight * (m_Array[i] + 1)));
 
-		bar.setFillColor(sf::Color(0, 255, 255, 255));
+		bar.setFillColor(sf::Color(0, 255, 0, 255));
 		bar.setPosition(sf::Vector2f(i * m_BarWidth, m_Height - m_BarHeight * (m_Array[i] + 1)));
 
 		m_Window.draw(bar);
