@@ -38,6 +38,7 @@ There is very little to no documentation of the source as it is just a very smal
 	.\SortVisualizer sort-name [-d ms] [-c count] [-w width] [-h height] [-f]
 
 | Flag | Meaning | Arguments | Default Value | Required |
+| ---- | ------- | --------- | ------------- | -------- |
 | `sort-name` | The name of the sorting algorithm minus its " Sort" suffix | name | *none* | **Yes** |
 | `-d` | The operation delay in milliseconds | ms | 1 | **No** |
 | `-c` | The number of randomly shuffled elements to sort | count | 256 | **No** |
