@@ -7,6 +7,9 @@ namespace Sort {
 		for (int g = 8; g > -1; g--) {
 			int gap = gaps[g];
 
+			if (gap >= arr.size)
+				continue;
+
 			for (int i = gap; i < arr.size; i++) {
 				int temp = arr[i];
 
