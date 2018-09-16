@@ -134,6 +134,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Algorithms\bitonic_sort.cpp" />
     <ClCompile Include="src\Algorithms\cycle_sort.cpp" />
     <ClCompile Include="src\Algorithms\gnome_sort.cpp" />
     <ClCompile Include="src\Algorithms\heap_sort.cpp" />
@@ -142,6 +143,7 @@
     <ClCompile Include="src\Algorithms\quick_sort.cpp" />
     <ClCompile Include="src\Algorithms\radix_sort.cpp" />
     <ClCompile Include="src\Algorithms\ripple_sort.cpp" />
+    <ClCompile Include="src\Algorithms\shell_sort.cpp" />
     <ClCompile Include="src\Algorithms\simple_sort.cpp" />
     <ClCompile Include="src\Algorithms\stooge_sort.cpp" />
     <ClCompile Include="src\main.cpp" />

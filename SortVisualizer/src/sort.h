@@ -31,5 +31,9 @@ namespace Sort {
 
 	void heapSort(SortArray&);
 
+	void shellSort(SortArray&);
+
+	void bitonicSort(SortArray&);
+
 	bool sort(sf::RenderWindow &window, const std::string&, int, int);
 }

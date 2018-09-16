@@ -4,7 +4,7 @@
 
 namespace Sort {
 	bool sort(sf::RenderWindow &window, const std::string &alg, int count, int delay) {
-		const std::string algorithms[12] = {
+		const std::string algorithms[] = {
 			"Bubble",
 			"Heap",
 			"Cycle",
@@ -16,7 +16,9 @@ namespace Sort {
 			"Radix",
 			"Pancake",
 			"Gnome",
-			"Stooge"
+			"Stooge",
+			"Shell",
+			"Bitonic"
 		};
 
 		auto item = std::find(std::begin(algorithms), std::end(algorithms), alg);
@@ -62,6 +64,12 @@ namespace Sort {
 				break;
 			case 11:
 				stoogeSort(arr);
+				break;
+			case 12:
+				shellSort(arr);
+				break;
+			case 13:
+				bitonicSort(arr);
 				break;
 			}
 

@@ -17,6 +17,8 @@ The current visualizer supports the following algorithms:
  - Pancake Sort
  - Cycle Sort
  - Heap Sort
+ - Shell Sort
+ - Bitonic Sort
 
 I will be adding more in the future as I get around to it.
 
@@ -29,3 +31,12 @@ You will need `Visual C++ 17` and a version of `SFML 2.4+` statically compiled f
 If you would like to add a feature or sorting algorithms just make a pull request and I will review it.  When designing your algorithms keep in mind that you want to showcase the algorithm.  Make sure to call `arr.draw()` wherever you see fit to update the display.
 
 There is very little to no documentation of the source as it is just a very small side project of mine.  Feel free to use it as a base for whatever you want. 
+
+## Command Line Interface
+
+	.\SortVisualizer sort-name [-d ms] [-c count] [-ucwd]
+
+ - `sort-name` is the name of the sorting algorithm minus its "sort" suffix.  For example, Merge Sort's *sort name* is `Merge`.
+ - `-d` the operation delay in milliseconds.
+ - `-c` the number of randomly shuffled elements to sort
+ - `-ucwd` a bug fix to set the proper working directory when running from the "Debug" / "Release" build folders. **Will be deprecated.**
