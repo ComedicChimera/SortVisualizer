@@ -2,7 +2,7 @@
 
 A simple application for visualizing sorting algorithms written with C++ & SFML.
 
-<img src="image.png" width="640px" height="480px"/>
+<img src="image.png"/>
 
 ## Algorithms
 
