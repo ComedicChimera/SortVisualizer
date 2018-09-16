@@ -37,11 +37,12 @@ There is very little to no documentation of the source as it is just a very smal
 
 	.\SortVisualizer sort-name [-d ms] [-c count] [-w width] [-h height] [-f]
 
- - `sort-name` is the name of the sorting algorithm minus its "sort" suffix.  For example, Merge Sort's *sort name* is `Merge`.
- - `-d` the operation delay in milliseconds.
- - `-c` the number of randomly shuffled elements to sort
- - `-w` the width of the screen (non resizable)
- - `-h` the height of the screen (non resizable)
- - `-f` if this flag is present, the sort will run in fullscreen (no arguments)
+| Flag | Meaning | Arguments | Default Value | Required |
+| `sort-name` | The name of the sorting algorithm minus its " Sort" suffix | name | *none* | **Yes** |
+| `-d` | The operation delay in milliseconds | ms | 1 | **No** |
+| `-c` | The number of randomly shuffled elements to sort | count | 256 | **No** |
+| `-w` | The width of the screen in pixels (non resizable) | width | 1280 | **No** |
+| `-h` | The height of the screen in pixels (non resizable) | height | 720 | **No** |
+| `-f` | If this flag is present, the sort will run in fullscreen | *none*  | *none* | **No** |
 
 These parameters are all optional except for `sort-name` and are in no particular order. (the flags can be given in any order)
