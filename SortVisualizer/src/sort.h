@@ -30,4 +30,6 @@ namespace Sort {
 	void rippleSort(SortArray&);
 
 	void heapSort(SortArray&);
+
+	bool sort(sf::RenderWindow &window, const std::string&, int, int);
 }

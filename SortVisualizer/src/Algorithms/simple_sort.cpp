@@ -18,7 +18,7 @@ namespace Sort {
 	}
 
 	void bubbleSort(SortArray &arr) {
-		for (int max = arr.size - 2; max > 1; max--) {
+		for (int max = arr.size - 1; max > 1; max--) {
 			for (int i = 0; i < max; i++) {
 				if (arr[i] > arr[i + 1]) {
 					arr.swap(i, i + 1);
