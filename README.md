@@ -35,15 +35,22 @@ There is very little to no documentation of the source as it is just a very smal
 
 ## Command Line Interface
 
+This application provides a minimalist CLI with a couple flags and one mandatory argument.  Below is an input
+command template.
+
 	.\SortVisualizer sort-name [-d ms] [-c count] [-w width] [-h height] [-f]
 
-| Flag | Meaning | Arguments | Default Value | Required |
-| ---- | ------- | --------- | ------------- | -------- |
-| `sort-name` | The name of the sorting algorithm minus its " Sort" suffix | name | *none* | **Yes** |
-| `-d` | The operation delay in milliseconds | ms | 1 | **No** |
-| `-c` | The number of randomly shuffled elements to sort | count | 256 | **No** |
-| `-w` | The width of the screen in pixels (non resizable) | width | 1280 | **No** |
-| `-h` | The height of the screen in pixels (non resizable) | height | 720 | **No** |
-| `-f` | If this flag is present, the sort will run in fullscreen | *none*  | *none* | **No** |
+The mandatory argument `sort-name` is the name of the sorting algorithm minus its " Sort" suffix.  For example Merge Sort's *sort-name* is `Merge`. There is no flag for this argument since it always comes before the other flag arguments.
 
-These parameters are all optional except for `sort-name` and are in no particular order. (the flags can be given in any order)
+### Optional Flags
+
+| Flag | Meaning | Arguments | Default Value |
+| ---- | ------- | --------- | ------------- |
+| `-d` | The operation delay in milliseconds | ms | 1 |
+| `-c` | The number of randomly shuffled elements to sort | count | 256 |
+| `-w` | The width of the screen in pixels (non resizable) | width | 1280 |
+| `-h` | The height of the screen in pixels (non resizable) | height | 720 |
+| `-f` | The sort will run in fullscreen | *none*  | *none* |
+
+These flags can be specified in any order.  A flag that accepts *none* as a parameters means that it is a boolean flag.
+If is is present, it's action will occur.
