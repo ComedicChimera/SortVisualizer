@@ -34,8 +34,13 @@ There is very little to no documentation of the source as it is just a very smal
 
 ## Command Line Interface
 
-	.\SortVisualizer sort-name [-d ms] [-c count]
+	.\SortVisualizer sort-name [-d ms] [-c count] [-w width] [-h height] [-f]
 
  - `sort-name` is the name of the sorting algorithm minus its "sort" suffix.  For example, Merge Sort's *sort name* is `Merge`.
  - `-d` the operation delay in milliseconds.
  - `-c` the number of randomly shuffled elements to sort
+ - `-w` the width of the screen (non resizable)
+ - `-h` the height of the screen (non resizable)
+ - `-f` if this flag is present, the sort will run in fullscreen (no arguments)
+
+These parameters are all optional except for `sort-name` and are in no particular order. (the flags can be given in any order)
