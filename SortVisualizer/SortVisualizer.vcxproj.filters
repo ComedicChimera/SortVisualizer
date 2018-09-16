@@ -71,9 +71,6 @@
     <ClInclude Include="src\sort_array.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\constants.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\sort.h">
       <Filter>Header Files</Filter>
     </ClInclude>

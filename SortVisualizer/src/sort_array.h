@@ -10,7 +10,7 @@ class SortArray {
 
 	float m_BarWidth, m_BarHeight;
 	
-	unsigned int m_Delay;
+	unsigned int m_Delay, m_Height;
 
 	const std::string m_Title;
 

@@ -1,12 +1,14 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-#include "constants.h"
 #include "sort.h"
 #include "sort_array.h"
 
+unsigned int WIDTH = 1280, HEIGHT = 720;
+bool FULLSCREEN = false;
+
 void sort(std::string &algorithm, int count, int delay) {
-	sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "Sort Visualizer", sf::Style::Default);
+	sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "Sort Visualizer", FULLSCREEN ? sf::Style::Fullscreen : sf::Style::Default);
 
 	window.clear();
 
@@ -42,6 +44,12 @@ int main(int argc, char* argv[]) {
 			case 2:
 				delay = atoi(argv[i]);
 				break;
+			case 3:
+				WIDTH = atoi(argv[i]);
+				break;
+			case 4:
+				HEIGHT = atoi(argv[i]);
+				break;				
 			}
 
 			setArg = false;
@@ -51,6 +59,15 @@ int main(int argc, char* argv[]) {
 				nextArg = 1;
 			else if (!strcmp(argv[i], "-d"))
 				nextArg = 2;
+			else if (!strcmp(argv[i], "-w"))
+				nextArg = 3;
+			else if (!strcmp(argv[i], "-h"))
+				nextArg = 4;
+			else if (!strcmp(argv[i], "-f")) {
+				FULLSCREEN = true;
+				continue;
+			}
+				
 
 			setArg = true;
 		}

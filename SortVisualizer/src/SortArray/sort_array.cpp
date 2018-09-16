@@ -21,6 +21,8 @@ SortArray::SortArray(sf::RenderWindow &window, unsigned int size, unsigned int d
 
 	m_BarWidth = windowSize.x / (float)size;
 	m_BarHeight = (windowSize.y - 60) / (float)size;
+
+	m_Height = windowSize.y;
 }
 
 void SortArray::shuffle() {

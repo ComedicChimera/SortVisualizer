@@ -154,7 +154,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\sort.h" />
-    <ClInclude Include="src\constants.h" />
     <ClInclude Include="src\sort_array.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

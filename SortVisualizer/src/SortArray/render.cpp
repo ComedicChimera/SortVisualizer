@@ -5,8 +5,6 @@
 #include <cstdlib>
 #include <iostream>
 
-#include "../constants.h"
-
 void SortArray::draw(unsigned int count, ...) {
 	std::vector<int> selected;
 	bool hasSelected = true;
@@ -42,7 +40,7 @@ void SortArray::draw(unsigned int count, ...) {
 
 		bar.setFillColor(sf::Color(255, gb, gb, 255));
 
-		bar.setPosition(sf::Vector2f(i * m_BarWidth, HEIGHT - m_BarHeight * (m_Array[i] + 1)));
+		bar.setPosition(sf::Vector2f(i * m_BarWidth, m_Height - m_BarHeight * (m_Array[i] + 1)));
 
 		m_Window.draw(bar);
 	}
@@ -78,7 +76,7 @@ bool SortArray::validate() {
 			sf::RectangleShape bar(sf::Vector2f(m_BarWidth, m_BarHeight * (m_Array[i] + 1)));
 
 			bar.setFillColor(sf::Color(r, g, b, 255));
-			bar.setPosition(sf::Vector2f(i * m_BarWidth, HEIGHT - m_BarHeight * (m_Array[i] + 1)));
+			bar.setPosition(sf::Vector2f(i * m_BarWidth, m_Height - m_BarHeight * (m_Array[i] + 1)));
 
 			m_Window.draw(bar);
 		}
@@ -99,7 +97,7 @@ bool SortArray::validate() {
 		sf::RectangleShape bar(sf::Vector2f(m_BarWidth, m_BarHeight * (m_Array[i] + 1)));
 
 		bar.setFillColor(sf::Color(0, 255, 255, 255));
-		bar.setPosition(sf::Vector2f(i * m_BarWidth, HEIGHT - m_BarHeight * (m_Array[i] + 1)));
+		bar.setPosition(sf::Vector2f(i * m_BarWidth, m_Height - m_BarHeight * (m_Array[i] + 1)));
 
 		m_Window.draw(bar);
 	}
