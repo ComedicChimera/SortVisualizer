@@ -66,6 +66,9 @@
     <ClCompile Include="src\Algorithms\bitonic_sort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Algorithms\gravity_sort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\sort_array.h">

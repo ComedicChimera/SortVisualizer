@@ -14,7 +14,7 @@ The visualizer supports the following algorithms:
  - Quick Sort
  - Merge Sort
  - Insertion Sort
- - Ripple Sort
+ - Ripple Sort (LSD)
  - Gnome Sort
  - Stooge Sort
  - Pancake Sort
@@ -22,6 +22,7 @@ The visualizer supports the following algorithms:
  - Heap Sort
  - Shell Sort
  - Bitonic Sort
+ - Gravity Sort
 
 ## Requirements
 

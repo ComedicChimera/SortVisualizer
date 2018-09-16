@@ -137,6 +137,7 @@
     <ClCompile Include="src\Algorithms\bitonic_sort.cpp" />
     <ClCompile Include="src\Algorithms\cycle_sort.cpp" />
     <ClCompile Include="src\Algorithms\gnome_sort.cpp" />
+    <ClCompile Include="src\Algorithms\gravity_sort.cpp" />
     <ClCompile Include="src\Algorithms\heap_sort.cpp" />
     <ClCompile Include="src\Algorithms\insertion_sort.cpp" />
     <ClCompile Include="src\Algorithms\merge_sort.cpp" />

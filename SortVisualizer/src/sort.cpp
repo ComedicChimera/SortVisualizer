@@ -18,7 +18,8 @@ namespace Sort {
 			"Gnome",
 			"Stooge",
 			"Shell",
-			"Bitonic"
+			"Bitonic",
+			"Gravity"
 		};
 
 		auto item = std::find(std::begin(algorithms), std::end(algorithms), alg);
@@ -70,6 +71,9 @@ namespace Sort {
 				break;
 			case 13:
 				bitonicSort(arr);
+				break;
+			case 14:
+				gravitySort(arr);
 				break;
 			}
 

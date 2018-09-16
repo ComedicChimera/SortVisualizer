@@ -35,5 +35,7 @@ namespace Sort {
 
 	void bitonicSort(SortArray&);
 
+	void gravitySort(SortArray&);
+
 	bool sort(sf::RenderWindow &window, const std::string&, int, int);
 }
