@@ -16,6 +16,7 @@ class SortArray {
 
 	void sleep(int delay);
 	void drawText();
+	void checkClosed();
 
 public:
 	SortArray(sf::RenderWindow&, unsigned int, unsigned int, const std::string&);

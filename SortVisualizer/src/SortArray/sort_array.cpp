@@ -36,3 +36,13 @@ void SortArray::shuffle() {
 void SortArray::sleep(int delay) {
 	std::this_thread::sleep_for(std::chrono::milliseconds(delay));
 }
+
+void SortArray::checkClosed() {
+	sf::Event event;
+	if (m_Window.pollEvent(event)) {
+		if (event.type == sf::Event::Closed) {
+			m_Window.close();
+			exit(0);
+		}
+	}
+}

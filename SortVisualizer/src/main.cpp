@@ -1,6 +1,5 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include <windows.h>
 
 #include "constants.h"
 #include "sort.h"
@@ -21,27 +20,6 @@ void sort(std::string &algorithm, int count, int delay) {
 				window.close();
 		}
 	}
-}
-
-bool setDirectory() {
-	char dirBuff[100];
-
-	GetCurrentDirectory(100, dirBuff);
-
-	std::string directory(dirBuff);
-	directory += "\\..\\..\\SortVisualizer";
-
-	if (SetCurrentDirectory(directory.c_str()) == 0) {
-		std::cout << GetLastError() << std::endl;
-		return false;
-	}
-
-	char checkBuff[100];
-	GetCurrentDirectory(100, checkBuff);
-
-	std::cout << checkBuff << std::endl;
-		
-	return true;
 }
 
 int main(int argc, char* argv[]) {
@@ -73,14 +51,6 @@ int main(int argc, char* argv[]) {
 				nextArg = 1;
 			else if (!strcmp(argv[i], "-d"))
 				nextArg = 2;
-			else if (!strcmp(argv[i], "-ucwd")) {
-				if (!setDirectory()) {
-					std::cin.get();
-					return 1;
-				}
-
-				continue;
-			}
 
 			setArg = true;
 		}

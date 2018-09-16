@@ -34,9 +34,8 @@ There is very little to no documentation of the source as it is just a very smal
 
 ## Command Line Interface
 
-	.\SortVisualizer sort-name [-d ms] [-c count] [-ucwd]
+	.\SortVisualizer sort-name [-d ms] [-c count]
 
  - `sort-name` is the name of the sorting algorithm minus its "sort" suffix.  For example, Merge Sort's *sort name* is `Merge`.
  - `-d` the operation delay in milliseconds.
  - `-c` the number of randomly shuffled elements to sort
- - `-ucwd` a bug fix to set the proper working directory when running from the "Debug" / "Release" build folders. **Will be deprecated.**

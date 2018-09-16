@@ -48,6 +48,9 @@ void SortArray::draw(unsigned int count, ...) {
 	}
 
 	m_Window.display();
+
+	checkClosed();
+
 	sleep(m_Delay);
 
 }
@@ -82,6 +85,8 @@ bool SortArray::validate() {
 
 		m_Window.display();
 
+		checkClosed();
+
 		sleep(1);
 	}
 
@@ -109,7 +114,7 @@ void SortArray::drawText() {
 	sprintf_s(data, 100, "Algorithm: %s\nDelay: %d ms", m_Title.c_str(), m_Delay);
 
 	sf::Font font;
-	font.loadFromFile("data/arial.ttf");
+	font.loadFromFile("C:/Windows/Fonts/arial.ttf");
 
 	sf::Text text(data, font, 20);
 	text.setPosition(sf::Vector2f(7, 7));
