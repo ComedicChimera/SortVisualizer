@@ -27,5 +27,7 @@ namespace Sort {
 				arr.draw(1, j);
 			}
 		}
+
+		arr.draw(0);
 	}
 }

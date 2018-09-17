@@ -39,5 +39,7 @@ namespace Sort {
 
 	void bitonicSort(SortArray &arr) {
 		bitonicSort(arr, 0, arr.size, true);
+
+		arr.draw(0);
 	}
 }
