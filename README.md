@@ -2,7 +2,8 @@
 
 A simple application for visualizing sorting algorithms written with C++ & SFML.
 
-<img src="image.png"/>
+<img src="images/normal.png"/>
+<img src="images/rainbow.png"/>
 
 ## Algorithms
 
@@ -10,11 +11,11 @@ The visualizer supports the following algorithms:
 
  - Bubble Sort
  - Selection Sort
- - Radix Sort
+ - Radix Sort (LSD)
  - Quick Sort
  - Merge Sort
  - Insertion Sort
- - Ripple Sort (LSD)
+ - Ripple Sort
  - Gnome Sort
  - Stooge Sort
  - Pancake Sort
@@ -52,6 +53,9 @@ The mandatory argument `sort-name` is the name of the sorting algorithm minus it
 | `-w` | The width of the screen in pixels (non resizable) | width | 1280 |
 | `-h` | The height of the screen in pixels (non resizable) | height | 720 |
 | `-f` | The sort will run in fullscreen | *none*  | *none* |
+| `-rainbow` | The sort will now run in rainbow mode | *none* | *none* |
 
 These flags can be specified in any order.  A flag that accepts *none* as a parameters means that it is a boolean flag.
 If is is present, it's action will occur.
+
+***Note*** *Rainbow mode does not run a visible validation check at the end for aesthetic purposes.*
