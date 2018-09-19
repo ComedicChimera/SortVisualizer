@@ -31,14 +31,14 @@ void SortArray::draw(unsigned int count, ...) {
 
 		sf::RectangleShape bar(sf::Vector2f(m_BarWidth, m_BarHeight * (m_Array[i] + 1)));
 
-		int gb = 255;
+		sf::Color color = m_Rainbow ? calculateColor(value) : sf::Color(255, 255, 255);
 
 		if (hasSelected) {
 			if (std::find(selected.begin(), selected.end(), i) != selected.end())
-				gb = 0;
+				color = m_Rainbow ? sf::Color(0, 0, 0) : sf::Color(255, 0, 0);
 		}
 
-		bar.setFillColor(sf::Color(255, gb, gb, 255));
+		bar.setFillColor(color);
 
 		bar.setPosition(sf::Vector2f(i * m_BarWidth, m_Height - m_BarHeight * (m_Array[i] + 1)));
 
@@ -120,4 +120,14 @@ void SortArray::drawText() {
 	text.setPosition(sf::Vector2f(7, 7));
 
 	m_Window.draw(text);
+}
+
+sf::Color SortArray::calculateColor(int value) {
+	int i = (255 * value) / size;
+
+	int r = round(sin(0.024 * i + 0) * 127 + 128);
+	int g = round(sin(0.024 * i + 4) * 127 + 128);
+	int b = round(sin(0.024 * i + 2) * 127 + 128);
+
+	return sf::Color(r, g, b);
 }

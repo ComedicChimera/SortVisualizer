@@ -6,13 +6,14 @@
 
 unsigned int WIDTH = 1280, HEIGHT = 720;
 bool FULLSCREEN = false;
+bool RAINBOW = false;
 
 void sort(std::string &algorithm, int count, int delay) {
 	sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "Sort Visualizer", FULLSCREEN ? sf::Style::Fullscreen : sf::Style::Default);
 
 	window.clear();
 
-	if (!Sort::sort(window, algorithm, count, delay))
+	if (!Sort::sort(window, algorithm, count, delay, RAINBOW))
 		std::cout << "Failed to sort collection." << std::endl;
 
 	while (window.isOpen()) {
@@ -65,6 +66,10 @@ int main(int argc, char* argv[]) {
 				nextArg = 4;
 			else if (!strcmp(argv[i], "-f")) {
 				FULLSCREEN = true;
+				continue;
+			}
+			else if (!strcmp(argv[i], "-rainbow")) {
+				RAINBOW = true;
 				continue;
 			}
 				

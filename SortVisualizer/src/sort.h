@@ -37,5 +37,5 @@ namespace Sort {
 
 	void gravitySort(SortArray&);
 
-	bool sort(sf::RenderWindow &window, const std::string&, int, int);
+	bool sort(sf::RenderWindow &window, const std::string&, int, int, bool);
 }

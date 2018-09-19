@@ -14,12 +14,16 @@ class SortArray {
 
 	const std::string m_Title;
 
+	bool m_Rainbow;
+
 	void sleep(int delay);
 	void drawText();
 	void checkClosed();
 
+	sf::Color calculateColor(int);
+
 public:
-	SortArray(sf::RenderWindow&, unsigned int, unsigned int, const std::string&);
+	SortArray(sf::RenderWindow&, unsigned int, unsigned int, const std::string&, bool);
 
 	int &operator[](unsigned int);
 	void swap(int, int);

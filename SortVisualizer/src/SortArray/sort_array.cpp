@@ -4,10 +4,12 @@
 #include <chrono>
 #include <thread>
 
-SortArray::SortArray(sf::RenderWindow &window, unsigned int size, unsigned int delay, const std::string &title)
+SortArray::SortArray(sf::RenderWindow &window, unsigned int size, unsigned int delay, const std::string &title, bool rainbow)
 	: m_Window(window)
 	, m_Title(title)
 	, m_Delay(delay)
+	, m_Rainbow(rainbow)
+
 	, size(size)
 {
 	m_Array = new int[size];
