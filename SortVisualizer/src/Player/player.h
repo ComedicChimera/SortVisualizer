@@ -1,15 +1,25 @@
 #pragma once
 
-#include <SFML/Audio.hpp>
+#include <vector>
+#include <future>
 #include <list>
 
+class BeepThread {
+	std::future<void> m_Future;
+
+public:
+	BeepThread(int, int);
+
+	bool done();
+};
+
+
 class Player {
-	sf::SoundBuffer m_Sample;
-	std::list<sf::Sound> m_Sounds;
+	std::list<BeepThread> m_Beeps;
 
 	int m_Max;
 
-	float convertToPitch(int);
+	float convertToFreq(int);
 
 public:
 	Player(int);

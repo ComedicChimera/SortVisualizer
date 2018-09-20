@@ -50,8 +50,8 @@ void SortArray::draw(unsigned int count, ...) {
 	checkClosed();
 
 	if (m_Sound) {
-		for (int value : selected)
-			m_Player.playValue(value);
+		for (int ndx : selected)
+			m_Player.playValue(m_Array[ndx]);
 	}
 	
 
@@ -88,7 +88,7 @@ bool SortArray::validate() {
 			m_Window.draw(bar);
 		}
 
-		if (m_Sound) m_Player.playValue(mx);
+		if (m_Sound) m_Player.playValue(m_Array[mx]);
 
 		m_Window.display();
 
