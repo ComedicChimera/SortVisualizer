@@ -42,7 +42,7 @@ There is very little to no documentation of the source as it is just a very smal
 This application provides a minimalist CLI with a couple flags and one mandatory argument.  Below is an input
 command template.
 
-	.\SortVisualizer sort-name [-d ms] [-c count] [-w width] [-h height] [-f]
+	.\SortVisualizer sort-name [-d ms] [-c count] [-w width] [-h height] [-f] [-rainbow] [-ns]
 
 The mandatory argument `sort-name` is the name of the sorting algorithm minus its " Sort" suffix.  For example Merge Sort's *sort-name* is `Merge`. There is no flag for this argument since it always comes before the other flag arguments.
 
