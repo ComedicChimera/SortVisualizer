@@ -1,11 +1,11 @@
 #pragma once
 
 #include <SFML/Audio.hpp>
-#include <queue>
+#include <list>
 
 class Player {
 	sf::SoundBuffer m_Sample;
-	std::queue<sf::Sound> m_Sounds;
+	std::list<sf::Sound> m_Sounds;
 
 	int m_Max;
 

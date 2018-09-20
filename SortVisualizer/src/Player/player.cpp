@@ -8,8 +8,8 @@ Player::Player(int max)
 
 Player::~Player() {
 	while (m_Sounds.size() > 0) {
-		m_Sounds.front().stop();
-		m_Sounds.pop();
+		m_Sounds.back().stop();
+		m_Sounds.pop_back();
 	}
 		
 }
@@ -19,16 +19,17 @@ float Player::convertToPitch(int value) {
 }
 
 void Player::playValue(int value) {
-	while (m_Sounds.size() > 0 && m_Sounds.front().getStatus() == sf::Sound::Stopped)
-		m_Sounds.pop();
+	m_Sounds.remove_if([](sf::Sound s) -> bool {
+		return s.getStatus() == sf::Sound::Stopped || s.getPlayingOffset().asMilliseconds() > 100;
+	});
 
 	float pitch = convertToPitch(value);
 	
 	sf::Sound sound;
 	sound.setBuffer(m_Sample);
 	sound.setPitch(pitch);
-	sound.setVolume(5);
+	sound.setVolume(10);
 
-	m_Sounds.push(sound);
+	m_Sounds.push_back(sound);
 	m_Sounds.back().play();
 }
