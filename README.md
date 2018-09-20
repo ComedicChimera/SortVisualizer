@@ -46,18 +46,25 @@ command template.
 
 The mandatory argument `sort-name` is the name of the sorting algorithm minus its " Sort" suffix.  For example Merge Sort's *sort-name* is `Merge`. There is no flag for this argument since it always comes before the other flag arguments.
 
-### Optional Flags
+### Additional Parameters
 
-| Flag | Meaning | Arguments | Default Value |
+These can be specified in any order and are all optional.
+
+#### Arguments
+
+| Name | Meaning | Arguments | Default Value |
 | ---- | ------- | --------- | ------------- |
 | `-d` | The operation delay in milliseconds | ms | 1 |
 | `-c` | The number of randomly shuffled elements to sort | count | 256 |
 | `-w` | The width of the screen in pixels (non resizable) | width | 1280 |
 | `-h` | The height of the screen in pixels (non resizable) | height | 720 |
-| `-f` | The sort will run in fullscreen | *none*  | *none* |
-| `-rainbow` | The sort will now run in rainbow mode | *none* | *none* |
 
-These flags can be specified in any order.  A flag that accepts *none* as a parameters means that it is a boolean flag.
-If is is present, it's action will occur.
+#### Flags
+
+| Flag | Meaning |
+| ---- | ------- |
+| `-f` | The sort will run in fullscreen |
+| `-rainbow` | The sort will now run in rainbow mode |
+| `-ns` | No sound will be played during sort |
 
 ***Note*** *Rainbow mode does not run a visible validation check at the end for aesthetic purposes.*

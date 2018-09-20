@@ -49,8 +49,13 @@ void SortArray::draw(unsigned int count, ...) {
 
 	checkClosed();
 
-	sleep(m_Delay);
+	if (m_Sound) {
+		for (int value : selected)
+			m_Player.playValue(value);
+	}
+	
 
+	sleep(m_Delay);
 }
 
 bool SortArray::validate() {
@@ -82,6 +87,8 @@ bool SortArray::validate() {
 
 			m_Window.draw(bar);
 		}
+
+		if (m_Sound) m_Player.playValue(mx);
 
 		m_Window.display();
 

@@ -5,15 +5,14 @@
 #include "sort_array.h"
 
 unsigned int WIDTH = 1280, HEIGHT = 720;
-bool FULLSCREEN = false;
-bool RAINBOW = false;
+bool FULLSCREEN = false, RAINBOW = false, SOUND = true;
 
 void sort(std::string &algorithm, int count, int delay) {
 	sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "Sort Visualizer", FULLSCREEN ? sf::Style::Fullscreen : sf::Style::Default);
 
 	window.clear();
 
-	if (!Sort::sort(window, algorithm, count, delay, RAINBOW))
+	if (!Sort::sort(window, algorithm, count, delay, RAINBOW, SOUND))
 		std::cout << "Failed to sort collection." << std::endl;
 
 	while (window.isOpen()) {
@@ -72,7 +71,10 @@ int main(int argc, char* argv[]) {
 				RAINBOW = true;
 				continue;
 			}
-				
+			else if (!strcmp(argv[i], "-ns")) {
+				SOUND = false;
+				continue;
+			}
 
 			setArg = true;
 		}

@@ -4,6 +4,8 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 
+#include "Player/player.h"
+
 class SortArray {
 	int* m_Array;
 	sf::RenderWindow &m_Window;
@@ -14,7 +16,9 @@ class SortArray {
 
 	const std::string m_Title;
 
-	bool m_Rainbow;
+	bool m_Rainbow, m_Sound;
+
+	Player m_Player;
 
 	void sleep(int delay);
 	void drawText();
@@ -23,7 +27,7 @@ class SortArray {
 	sf::Color calculateColor(int);
 
 public:
-	SortArray(sf::RenderWindow&, unsigned int, unsigned int, const std::string&, bool);
+	SortArray(sf::RenderWindow&, unsigned int, unsigned int, const std::string&, bool, bool);
 
 	int &operator[](unsigned int);
 	void swap(int, int);

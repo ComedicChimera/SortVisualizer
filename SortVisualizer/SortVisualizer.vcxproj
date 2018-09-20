@@ -88,7 +88,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>C:\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-main-d.lib;sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;opengl32.lib;freetype.lib;jpeg.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-main-d.lib;sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;openal32.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;sfml-audio-s-d.lib;opengl32.lib;freetype.lib;jpeg.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -115,7 +115,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>C:\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-main.lib;sfml-graphics-s.lib;sfml-window-s.lib;sfml-system-s.lib;opengl32.lib;freetype.lib;jpeg.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-main.lib;sfml-graphics-s.lib;sfml-window-s.lib;sfml-system-s.lib;openal32.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;sfml-audio-s.lib;opengl32.lib;freetype.lib;jpeg.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
@@ -148,12 +148,14 @@
     <ClCompile Include="src\Algorithms\simple_sort.cpp" />
     <ClCompile Include="src\Algorithms\stooge_sort.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Player\player.cpp" />
     <ClCompile Include="src\sort.cpp" />
     <ClCompile Include="src\SortArray\logic.cpp" />
     <ClCompile Include="src\SortArray\render.cpp" />
     <ClCompile Include="src\SortArray\sort_array.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Player\player.h" />
     <ClInclude Include="src\sort.h" />
     <ClInclude Include="src\sort_array.h" />
   </ItemGroup>
