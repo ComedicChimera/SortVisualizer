@@ -3,6 +3,7 @@
 #include "sort_array.h"
 
 #include <vector>
+#include <string>
 
 namespace Sort {
 	int min(SortArray&, int);
