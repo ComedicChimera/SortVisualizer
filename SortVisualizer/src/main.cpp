@@ -5,25 +5,47 @@
 
 #include "sort.h"
 #include "sort_array.h"
+
+// renderers
+#include "ArrayRenderer/circle_renderer.h"
 #include "ArrayRenderer/bar_renderer.h"
 
 unsigned int WIDTH = 1280, HEIGHT = 720;
 bool FULLSCREEN = false, RAINBOW = false, SOUND = true;
 int COUNT = 256, DELAY = 1;
+unsigned int RENDERER = 0;
+
+void runSort(SortArray &arr, const std::string &algorithm) {
+	if (!Sort::sort(algorithm, arr))
+		throw new std::logic_error("The specified algorithm doesn't exist.");
+
+	if (!RAINBOW && !arr.validate())
+		std::cout << "Failed to sort array. Please open an issue on github to let me know what happened." << std::endl;
+}
 
 void startApp(const std::string &algorithm) {
 	sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "Sort Visualizer", FULLSCREEN ? sf::Style::Fullscreen : sf::Style::Default);
 
 	window.clear();
 
-	BarRenderer renderer(window, COUNT);
-	SortArray arr(window, COUNT, DELAY, algorithm + " Sort", RAINBOW, SOUND, renderer);
+	switch (RENDERER) {
+	case 0: 
+	{
+		BarRenderer renderer(window, COUNT);
+		SortArray arr(window, COUNT, DELAY, algorithm + " Sort", RAINBOW, SOUND, renderer);
 
-	if (!Sort::sort(algorithm, arr))
-		throw new std::logic_error("The specified algorithm doesn't exist.");
+		runSort(arr, algorithm);
+	}
+		break;
+	case 1:
+	{
+		CircleRenderer renderer(window, COUNT);
+		SortArray arr(window, COUNT, DELAY, algorithm + " Sort", RAINBOW, SOUND, renderer);
 
-	if (!RAINBOW && !arr.validate())
-		std::cout << "Failed to sort array. Please open an issue on github to let me know what happened." << std::endl;
+		runSort(arr, algorithm);
+	}
+		break;
+	}
 
 	while (window.isOpen()) {
 		sf::Event event;
@@ -70,6 +92,11 @@ std::string parseArgs(int argc, char* argv[]) {
 			case 4:
 				HEIGHT = safeConvert("-h", argv[i]);
 				break;
+			case 5:
+				if (!strcmp(argv[i], "circle"))
+					RENDERER = 1;
+				else if (strcmp(argv[i], "bar") != 0)
+					throw new std::logic_error("There is no renderer by the specified name.");
 			}
 
 			setArg = false;
@@ -83,6 +110,8 @@ std::string parseArgs(int argc, char* argv[]) {
 				nextArg = 3;
 			else if (!strcmp(argv[i], "-h"))
 				nextArg = 4;
+			else if (!strcmp(argv[i], "-v"))
+				nextArg = 5;
 			else if (!strcmp(argv[i], "-f")) {
 				FULLSCREEN = true;
 				continue;

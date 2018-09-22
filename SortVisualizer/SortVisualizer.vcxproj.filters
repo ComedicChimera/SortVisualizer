@@ -75,6 +75,9 @@
     <ClCompile Include="src\ArrayRenderer\bar_renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\ArrayRenderer\circle_renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\sort_array.h">
@@ -90,6 +93,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\ArrayRenderer\bar_renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ArrayRenderer\circle_renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

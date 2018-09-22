@@ -7,6 +7,9 @@ A simple application for visualizing sorting algorithms written with C++ & SFML.
 
 <img src="images/rainbow.png"/>
 
+
+<img src="images/circle.png"/>
+
 ## Algorithms
 
 The visualizer supports the following algorithms:
@@ -26,6 +29,11 @@ The visualizer supports the following algorithms:
  - Shell Sort
  - Bitonic Sort
  - Gravity Sort
+
+## Visualizers
+
+ - Traditional (bar)
+ - Disparity Circle (circle)
 
 ## Requirements
 
@@ -58,6 +66,7 @@ These can be specified in any order and are all optional.
 | `-c` | The number of randomly shuffled elements to sort | count | 256 |
 | `-w` | The width of the screen in pixels (non resizable) | width | 1280 |
 | `-h` | The height of the screen in pixels (non resizable) | height | 720 |
+| `-v` | The name of the visualizer | name | bar |
 
 #### Flags
 
