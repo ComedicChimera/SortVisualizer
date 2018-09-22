@@ -12,7 +12,9 @@ namespace Sort {
 
 	void selectionSort(SortArray&);
 
-	void radixSort(SortArray&);
+	void radixLSDSort(SortArray&, int);
+
+	void radixMSDSort(SortArray&);
 
 	void quickSort(SortArray&);
 
@@ -37,6 +39,8 @@ namespace Sort {
 	void bitonicSort(SortArray&);
 
 	void gravitySort(SortArray&);
+
+	void timeSort(SortArray&);
 
 	bool sort(const std::string&, SortArray&);
 }

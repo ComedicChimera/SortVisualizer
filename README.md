@@ -16,7 +16,10 @@ The visualizer supports the following algorithms:
 
  - Bubble Sort
  - Selection Sort
- - Radix Sort (LSD)
+ - LSD Radix Sort Base 10
+ - LSD Radix Sort Base 4
+ - LSD Radix Sort Base 2
+ - MSD Radix Sort
  - Quick Sort
  - Merge Sort
  - Insertion Sort
@@ -29,6 +32,7 @@ The visualizer supports the following algorithms:
  - Shell Sort
  - Bitonic Sort
  - Gravity Sort
+ - Time Sort (Mul 4) + Insertion Sort
 
 ## Visualizers
 
@@ -50,9 +54,21 @@ There is very little to no documentation of the source as it is just a very smal
 This application provides a minimalist CLI with a couple flags and one mandatory argument.  Below is an input
 command template.
 
-	.\SortVisualizer sort-name [-d ms] [-c count] [-w width] [-h height] [-f] [-rainbow] [-ns]
+	.\SortVisualizer sort-name [-d ms] [-c count] [-w width] [-h height] [-v visualizer] [-f] [-rainbow] [-ns]
 
 The mandatory argument `sort-name` is the name of the sorting algorithm minus its " Sort" suffix.  For example Merge Sort's *sort-name* is `Merge`. There is no flag for this argument since it always comes before the other flag arguments.
+
+#### Special Names
+
+| Name | ID |
+| ---- | -- |
+| LSD Radix Sort Base 10 | Radix |
+| LSD Radix Sort Base 4 | Radix4 |
+| LSD Radix Sort Base 2 | Radix2 |
+| MSD Radix Sort | RadixMSD |
+| Time Sort (Mul 4) + Insertion Sort | Time |
+
+All names that are not in this table follow the pattern outlined above.
 
 ### Additional Parameters
 

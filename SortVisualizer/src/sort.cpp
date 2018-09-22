@@ -19,7 +19,11 @@ namespace Sort {
 			"Stooge",
 			"Shell",
 			"Bitonic",
-			"Gravity"
+			"Gravity",
+			"Radix4",
+			"Radix2",
+			"RadixMSD",
+			"Time"
 		};
 
 		auto item = std::find(std::begin(algorithms), std::end(algorithms), alg);
@@ -53,7 +57,7 @@ namespace Sort {
 				mergeSort(arr);
 				break;
 			case 8:
-				radixSort(arr);
+				radixLSDSort(arr, 10);
 				break;
 			case 9:
 				pancakeSort(arr);
@@ -72,6 +76,18 @@ namespace Sort {
 				break;
 			case 14:
 				gravitySort(arr);
+				break;
+			case 15:
+				radixLSDSort(arr, 4);
+				break;
+			case 16:
+				radixLSDSort(arr, 2);
+				break;
+			case 17:
+				radixMSDSort(arr);
+				break;
+			case 18:
+				timeSort(arr);
 				break;
 			}
 

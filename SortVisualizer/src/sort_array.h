@@ -33,6 +33,7 @@ public:
 	void shuffle();
 
 	void draw(unsigned int count, ...);
+	void drawVector(const std::vector<int>&);
 	bool validate();
 
 	unsigned int size;

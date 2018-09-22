@@ -10,8 +10,6 @@ namespace Sort {
 				min = arr[i];
 				ndx = i;
 			}
-
-			arr.draw(1, i);
 		}
 
 		return ndx;

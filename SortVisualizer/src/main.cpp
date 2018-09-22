@@ -23,16 +23,38 @@ void runSort(SortArray &arr, const std::string &algorithm) {
 		std::cout << "Failed to sort array. Please open an issue on github to let me know what happened." << std::endl;
 }
 
+std::string getAlgorithmName(std::string algID) {
+	if (algID == "Radix4") {
+		return "Radix LSD Sort (Base 4)";
+	}
+	else if (algID == "Radix2") {
+		return "Radix LSD Sort (Base 2)";
+	}
+	else if (algID == "RadixMSD") {
+		return "Radix MSD Sort";
+	}
+	else if (algID == "Radix") {
+		return "Radix LSD Sort (Base 10)";
+	}
+	else if (algID == "Time") {
+		return "Time Sort (Mul 4) + Insertion Sort";
+	}
+	else
+		return algID + " Sort";
+}
+
 void startApp(const std::string &algorithm) {
 	sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "Sort Visualizer", FULLSCREEN ? sf::Style::Fullscreen : sf::Style::Default);
 
 	window.clear();
 
+	std::string algName = getAlgorithmName(algorithm);
+
 	switch (RENDERER) {
 	case 0: 
 	{
 		BarRenderer renderer(window, COUNT);
-		SortArray arr(window, COUNT, DELAY, algorithm + " Sort", RAINBOW, SOUND, renderer);
+		SortArray arr(window, COUNT, DELAY, algName, RAINBOW, SOUND, renderer);
 
 		runSort(arr, algorithm);
 	}
@@ -40,7 +62,7 @@ void startApp(const std::string &algorithm) {
 	case 1:
 	{
 		CircleRenderer renderer(window, COUNT);
-		SortArray arr(window, COUNT, DELAY, algorithm + " Sort", RAINBOW, SOUND, renderer);
+		SortArray arr(window, COUNT, DELAY, algName, RAINBOW, SOUND, renderer);
 
 		runSort(arr, algorithm);
 	}

@@ -7,7 +7,6 @@
 
 void SortArray::draw(unsigned int count, ...) {
 	std::vector<int> selected;
-	bool hasSelected = true;
 
 	if (count > 0) {
 		va_list args;
@@ -19,9 +18,11 @@ void SortArray::draw(unsigned int count, ...) {
 
 		va_end(args);
 	}
-	else
-		hasSelected = false;
 
+	drawVector(selected);
+}
+
+void SortArray::drawVector(const std::vector<int> &selected) {
 	m_Window.clear(sf::Color(90, 90, 90, 255));
 
 	drawText();
@@ -29,7 +30,7 @@ void SortArray::draw(unsigned int count, ...) {
 	for (int i = 0; i < size; i++) {
 		sf::Color color = m_Rainbow ? calculateColor(m_Array[i]) : sf::Color(255, 255, 255);
 
-		if (hasSelected) {
+		if (selected.size() > 0) {
 			if (std::find(selected.begin(), selected.end(), i) != selected.end())
 				color = m_Rainbow ? sf::Color(0, 0, 0) : sf::Color(255, 0, 0);
 		}
@@ -45,7 +46,6 @@ void SortArray::draw(unsigned int count, ...) {
 		for (int ndx : selected)
 			m_Player.playValue(m_Array[ndx]);
 	}
-	
 
 	sleep(m_Delay);
 }

@@ -38,7 +38,8 @@ void SortArray::shuffle() {
 }
 
 void SortArray::sleep(int delay) {
-	std::this_thread::sleep_for(std::chrono::milliseconds(delay));
+	if (delay > 0)
+		std::this_thread::sleep_for(std::chrono::milliseconds(delay));
 }
 
 void SortArray::checkClosed() {
