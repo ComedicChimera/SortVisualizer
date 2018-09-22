@@ -4,13 +4,14 @@
 #include <chrono>
 #include <thread>
 
-SortArray::SortArray(sf::RenderWindow &window, unsigned int size, unsigned int delay, const std::string &title, bool rainbow, bool sound)
+SortArray::SortArray(sf::RenderWindow &window, unsigned int size, unsigned int delay, const std::string &title, bool rainbow, bool sound, ArrayRenderer &renderer)
 	: m_Window(window)
 	, m_Title(title)
 	, m_Delay(delay)
 	, m_Rainbow(rainbow)
 	, m_Player(size)
 	, m_Sound(sound)
+	, m_Renderer(renderer)
 
 	, size(size)
 {
@@ -22,9 +23,6 @@ SortArray::SortArray(sf::RenderWindow &window, unsigned int size, unsigned int d
 	shuffle();
 
 	auto windowSize = window.getSize();
-
-	m_BarWidth = windowSize.x / (float)size;
-	m_BarHeight = (windowSize.y - 60) / (float)size;
 
 	m_Height = windowSize.y;
 }

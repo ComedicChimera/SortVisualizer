@@ -27,22 +27,14 @@ void SortArray::draw(unsigned int count, ...) {
 	drawText();
 
 	for (int i = 0; i < size; i++) {
-		int value = m_Array[i];
-
-		sf::RectangleShape bar(sf::Vector2f(m_BarWidth, m_BarHeight * (m_Array[i] + 1)));
-
-		sf::Color color = m_Rainbow ? calculateColor(value) : sf::Color(255, 255, 255);
+		sf::Color color = m_Rainbow ? calculateColor(m_Array[i]) : sf::Color(255, 255, 255);
 
 		if (hasSelected) {
 			if (std::find(selected.begin(), selected.end(), i) != selected.end())
 				color = m_Rainbow ? sf::Color(0, 0, 0) : sf::Color(255, 0, 0);
 		}
 
-		bar.setFillColor(color);
-
-		bar.setPosition(sf::Vector2f(i * m_BarWidth, m_Height - m_BarHeight * (m_Array[i] + 1)));
-
-		m_Window.draw(bar);
+		m_Renderer.drawElement(i, m_Array[i], color);
 	}
 
 	m_Window.display();
@@ -78,14 +70,7 @@ bool SortArray::validate() {
 				b = 0;
 			}
 
-			int value = m_Array[i];
-
-			sf::RectangleShape bar(sf::Vector2f(m_BarWidth, m_BarHeight * (m_Array[i] + 1)));
-
-			bar.setFillColor(sf::Color(r, g, b, 255));
-			bar.setPosition(sf::Vector2f(i * m_BarWidth, m_Height - m_BarHeight * (m_Array[i] + 1)));
-
-			m_Window.draw(bar);
+			m_Renderer.drawElement(i, m_Array[i], sf::Color(r, g, b, 255));
 		}
 
 		if (m_Sound) m_Player.playValue(m_Array[mx]);
@@ -100,16 +85,8 @@ bool SortArray::validate() {
 	m_Window.clear(sf::Color(90, 90, 90, 255));
 	drawText();
 
-	for (int i = 0; i < size; i++) {
-		int value = m_Array[i];
-
-		sf::RectangleShape bar(sf::Vector2f(m_BarWidth, m_BarHeight * (m_Array[i] + 1)));
-
-		bar.setFillColor(sf::Color(0, 255, 0, 255));
-		bar.setPosition(sf::Vector2f(i * m_BarWidth, m_Height - m_BarHeight * (m_Array[i] + 1)));
-
-		m_Window.draw(bar);
-	}
+	for (int i = 0; i < size; i++) 
+		m_Renderer.drawElement(i, m_Array[i], sf::Color(0, 255, 0, 255));
 
 	m_Window.display();
 

@@ -5,12 +5,11 @@
 #include <SFML/Graphics.hpp>
 
 #include "Player/player.h"
+#include "ArrayRenderer/array_renderer.h"
 
 class SortArray {
 	int* m_Array;
 	sf::RenderWindow &m_Window;
-
-	float m_BarWidth, m_BarHeight;
 	
 	unsigned int m_Delay, m_Height;
 
@@ -19,6 +18,7 @@ class SortArray {
 	bool m_Rainbow, m_Sound;
 
 	Player m_Player;
+	ArrayRenderer &m_Renderer;
 
 	void sleep(int delay);
 	void drawText();
@@ -27,7 +27,7 @@ class SortArray {
 	sf::Color calculateColor(int);
 
 public:
-	SortArray(sf::RenderWindow&, unsigned int, unsigned int, const std::string&, bool, bool);
+	SortArray(sf::RenderWindow&, unsigned int, unsigned int, const std::string&, bool, bool, ArrayRenderer &renderer);
 
 	int &operator[](unsigned int);
 	void swap(int, int);

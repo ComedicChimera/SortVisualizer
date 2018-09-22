@@ -3,7 +3,7 @@
 #include <algorithm>
 
 namespace Sort {
-	bool sort(sf::RenderWindow &window, const std::string &alg, int count, int delay, bool rainbow, bool hasSound) {
+	bool sort(const std::string &alg, SortArray &arr) {
 		const std::string algorithms[] = {
 			"Bubble",
 			"Heap",
@@ -26,8 +26,6 @@ namespace Sort {
 
 		if (item != std::end(algorithms)) {
 			std::string name = *item;
-
-			SortArray arr(window, count, delay, name + " Sort", rainbow, hasSound);
 
 			switch (std::distance(algorithms, item)) {
 			case 0:
@@ -77,12 +75,9 @@ namespace Sort {
 				break;
 			}
 
-			if (!rainbow && !arr.validate())
-				return false;
-
 			return true;
 		}
-		
+
 		return false;
 	}
 }
