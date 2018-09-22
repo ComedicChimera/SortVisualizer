@@ -58,7 +58,7 @@ command template.
 
 The mandatory argument `sort-name` is the name of the sorting algorithm minus its " Sort" suffix.  For example Merge Sort's *sort-name* is `Merge`. There is no flag for this argument since it always comes before the other flag arguments.
 
-#### Special Names
+### Special Names
 
 | Name | ID |
 | ---- | -- |
