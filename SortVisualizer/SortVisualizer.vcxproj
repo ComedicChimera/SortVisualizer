@@ -149,6 +149,7 @@
     <ClCompile Include="src\Algorithms\simple_sort.cpp" />
     <ClCompile Include="src\Algorithms\stooge_sort.cpp" />
     <ClCompile Include="src\Algorithms\time_sort.cpp" />
+    <ClCompile Include="src\Algorithms\tim_sort.cpp" />
     <ClCompile Include="src\ArrayRenderer\bar_renderer.cpp" />
     <ClCompile Include="src\ArrayRenderer\circle_renderer.cpp" />
     <ClCompile Include="src\ArrayRenderer\square_renderer.cpp" />

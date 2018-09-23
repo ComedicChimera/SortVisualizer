@@ -34,6 +34,7 @@ The visualizer supports the following algorithms:
  - Gravity Sort
  - Time Sort (Mul 4) + Insertion Sort
  - Odd Even Sort
+ - Tim Sort
 
 ## Visualizers
 
