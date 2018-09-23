@@ -9,6 +9,7 @@
 // renderers
 #include "ArrayRenderer/circle_renderer.h"
 #include "ArrayRenderer/bar_renderer.h"
+#include "ArrayRenderer/square_renderer.h"
 
 unsigned int WIDTH = 1280, HEIGHT = 720;
 bool FULLSCREEN = false, RAINBOW = false, SOUND = true;
@@ -39,6 +40,9 @@ std::string getAlgorithmName(std::string algID) {
 	else if (algID == "Time") {
 		return "Time Sort (Mul 4) + Insertion Sort";
 	}
+	else if (algID == "OddEven") {
+		return "Odd Even Sort";
+	}
 	else
 		return algID + " Sort";
 }
@@ -62,6 +66,14 @@ void startApp(const std::string &algorithm) {
 	case 1:
 	{
 		CircleRenderer renderer(window, COUNT);
+		SortArray arr(window, COUNT, DELAY, algName, RAINBOW, SOUND, renderer);
+
+		runSort(arr, algorithm);
+	}
+		break;
+	case 2:
+	{
+		SquareRenderer renderer(window, COUNT);
 		SortArray arr(window, COUNT, DELAY, algName, RAINBOW, SOUND, renderer);
 
 		runSort(arr, algorithm);
@@ -117,6 +129,12 @@ std::string parseArgs(int argc, char* argv[]) {
 			case 5:
 				if (!strcmp(argv[i], "circle"))
 					RENDERER = 1;
+				else if (!strcmp(argv[i], "square")) {
+					RENDERER = 2;
+
+					if (!RAINBOW)
+						RAINBOW = true;
+				}
 				else if (strcmp(argv[i], "bar") != 0)
 					throw new std::logic_error("There is no renderer by the specified name.");
 			}

@@ -141,6 +141,7 @@
     <ClCompile Include="src\Algorithms\heap_sort.cpp" />
     <ClCompile Include="src\Algorithms\insertion_sort.cpp" />
     <ClCompile Include="src\Algorithms\merge_sort.cpp" />
+    <ClCompile Include="src\Algorithms\odd_even_sort.cpp" />
     <ClCompile Include="src\Algorithms\quick_sort.cpp" />
     <ClCompile Include="src\Algorithms\radix_sort.cpp" />
     <ClCompile Include="src\Algorithms\ripple_sort.cpp" />
@@ -150,6 +151,7 @@
     <ClCompile Include="src\Algorithms\time_sort.cpp" />
     <ClCompile Include="src\ArrayRenderer\bar_renderer.cpp" />
     <ClCompile Include="src\ArrayRenderer\circle_renderer.cpp" />
+    <ClCompile Include="src\ArrayRenderer\square_renderer.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Player\player.cpp" />
     <ClCompile Include="src\sort.cpp" />
@@ -161,6 +163,7 @@
     <ClInclude Include="src\ArrayRenderer\array_renderer.h" />
     <ClInclude Include="src\ArrayRenderer\bar_renderer.h" />
     <ClInclude Include="src\ArrayRenderer\circle_renderer.h" />
+    <ClInclude Include="src\ArrayRenderer\square_renderer.h" />
     <ClInclude Include="src\Player\player.h" />
     <ClInclude Include="src\sort.h" />
     <ClInclude Include="src\sort_array.h" />

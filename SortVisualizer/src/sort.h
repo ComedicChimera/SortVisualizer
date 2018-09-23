@@ -42,5 +42,7 @@ namespace Sort {
 
 	void timeSort(SortArray&);
 
+	void oddEvenSort(SortArray&);
+
 	bool sort(const std::string&, SortArray&);
 }

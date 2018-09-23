@@ -33,11 +33,15 @@ The visualizer supports the following algorithms:
  - Bitonic Sort
  - Gravity Sort
  - Time Sort (Mul 4) + Insertion Sort
+ - Odd Even Sort
 
 ## Visualizers
 
  - Traditional (bar)
  - Disparity Circle (circle)
+ - Color Square (square)
+
+***Note*** *Color square always runs in rainbow mode, regardless of whether or not the flag is specified.*
 
 ## Requirements
 
@@ -67,6 +71,7 @@ The mandatory argument `sort-name` is the name of the sorting algorithm minus it
 | LSD Radix Sort Base 2 | Radix2 |
 | MSD Radix Sort | RadixMSD |
 | Time Sort (Mul 4) + Insertion Sort | Time |
+| Odd Even Sort | OddEven |
 
 All names that are not in this table follow the pattern outlined above.
 
