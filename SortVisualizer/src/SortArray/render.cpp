@@ -43,8 +43,18 @@ void SortArray::drawVector(const std::vector<int> &selected) {
 	checkClosed();
 
 	if (m_Sound) {
-		for (int ndx : selected)
-			m_Player.playValue(m_Array[ndx]);
+		if (selected.size() == 1) {
+			m_Player.playValue(m_Array[selected[0]]);
+		}
+		else if (selected.size() > 1) {
+			int sum = 0;
+
+			for (int ndx : selected) {
+				sum += ndx;
+			}
+
+			m_Player.playValue(m_Array[sum / selected.size()]);
+		}
 	}
 
 	sleep(m_Delay);

@@ -1,20 +1,11 @@
 #pragma once
 
-#include <future>
-#include <list>
+#include <vector>
 
-class BeepThread {
-	std::future<void> m_Future;
-
-public:
-	BeepThread(int, int);
-
-	bool done();
-};
-
+#include "synth.h"
 
 class Player {
-	std::list<BeepThread> m_Beeps;
+	std::vector<Synth> m_Synths;
 
 	int m_Max;
 
@@ -22,7 +13,6 @@ class Player {
 
 public:
 	Player(int);
-	~Player();
 
 	void playValue(int);
 };

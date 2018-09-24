@@ -1,28 +1,16 @@
 #include "player.h"
 
-#include <windows.h>
+#include <iostream>
 #include <thread>
-
-using namespace std::chrono_literals;
-
-BeepThread::BeepThread(int freq, int duration) {
-	m_Future = std::async(std::launch::async, [=]() {
-		Beep(freq, duration);
-	});
-}
-
-bool BeepThread::done() {
-	return m_Future.wait_for(0ms) == std::future_status::ready;
-}
+#include <chrono>
 
 Player::Player(int max) 
 	: m_Max(max + 1)
-{}
-
-Player::~Player() {
-	while (m_Beeps.size() > 0) {
-		m_Beeps.pop_back();
-	}	
+{
+	for (int i = 0; i < 12; i++) {
+		m_Synths.push_back(Synth(10000));
+		m_Synths.back().play();
+	}
 }
 
 float Player::convertToFreq(int value) {
@@ -30,10 +18,13 @@ float Player::convertToFreq(int value) {
 }
 
 void Player::playValue(int value) {
-	m_Beeps.remove_if([](BeepThread &item) -> bool { return item.done(); });
+	for (auto &synth : m_Synths) {
+		if (!synth.busy()) {
+			float frequency = convertToFreq(value);
 
-	m_Beeps.push_back(BeepThread(convertToFreq(value), 100));
+			synth.makeSound(frequency, 100);
 
-	// possibly remove
-	std::this_thread::sleep_for(5ms);
+			return;
+		}
+	}
 }
