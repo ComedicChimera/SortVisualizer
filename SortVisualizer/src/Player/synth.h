@@ -8,7 +8,7 @@ class Synth : public sf::SoundStream {
 	std::vector<sf::Int16> m_AudioData;
 	std::mutex m_Lock;
 
-	bool m_ClearData, m_Loaded;
+	bool m_ClearData, m_Loaded, m_Started;
 
 	int m_Amplitude;
 

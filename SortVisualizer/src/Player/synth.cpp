@@ -4,6 +4,7 @@ Synth::Synth(int amplitude)
 	: m_Amplitude(amplitude)
 	, m_Loaded(false)
 	, m_ClearData(false)
+	, m_Started(false)
 {
 	initialize(1, 44100);
 }
@@ -12,6 +13,7 @@ Synth::Synth(const Synth& other)
 	: m_Amplitude(other.m_Amplitude)
 	, m_Loaded(false)
 	, m_ClearData(false)
+	, m_Started(false)
 {
 	initialize(1, 44100);
 }
@@ -58,11 +60,24 @@ void Synth::makeSound(float freq, int duration) {
 	m_AudioData.clear();
 
 	int sampleCount = duration * 44;
+	int amplitude = m_Amplitude;
 	for (int i = 0; i < sampleCount; i++) {
-		m_AudioData.push_back(m_Amplitude * sin(TAU * (freq / 44100) * i));
+		if (i < sampleCount / 5) 
+			amplitude = floor(m_Amplitude * (i / (double)sampleCount) * 5);
+		else if (i > sampleCount / 2) 
+			amplitude = floor(m_Amplitude * ((sampleCount - i) / (double)sampleCount));
+		else
+			amplitude = m_Amplitude;
+
+		m_AudioData.push_back(amplitude * sin(TAU * (freq / 44100) * i));
 	}
 
 	m_Lock.unlock();
+
+	if (!m_Started) {
+		play();
+		m_Started = true;
+	}
 }
 
 bool Synth::busy() {
