@@ -45,6 +45,7 @@ The visualizer supports the following algorithms:
  - Traditional (bar)
  - Disparity Circle (circle)
  - Color Square (square)
+ - Spread Line (line)
 
 ***Note*** *Color square always runs in rainbow mode, regardless of whether or not the flag is specified.*
 

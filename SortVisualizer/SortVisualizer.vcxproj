@@ -156,6 +156,7 @@
     <ClCompile Include="src\Algorithms\tree_sort.cpp" />
     <ClCompile Include="src\ArrayRenderer\bar_renderer.cpp" />
     <ClCompile Include="src\ArrayRenderer\circle_renderer.cpp" />
+    <ClCompile Include="src\ArrayRenderer\line_renderer.cpp" />
     <ClCompile Include="src\ArrayRenderer\square_renderer.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Player\player.cpp" />
@@ -169,6 +170,7 @@
     <ClInclude Include="src\ArrayRenderer\array_renderer.h" />
     <ClInclude Include="src\ArrayRenderer\bar_renderer.h" />
     <ClInclude Include="src\ArrayRenderer\circle_renderer.h" />
+    <ClInclude Include="src\ArrayRenderer\line_renderer.h" />
     <ClInclude Include="src\ArrayRenderer\square_renderer.h" />
     <ClInclude Include="src\Player\player.h" />
     <ClInclude Include="src\Player\synth.h" />

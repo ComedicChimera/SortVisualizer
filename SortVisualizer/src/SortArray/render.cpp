@@ -3,7 +3,6 @@
 #include <cstdarg>
 #include <vector>
 #include <cstdlib>
-#include <iostream>
 
 void SortArray::draw(unsigned int count, ...) {
 	std::vector<int> selected;
@@ -31,7 +30,7 @@ void SortArray::drawVector(const std::vector<int> &selected) {
 		sf::Color color = m_Rainbow ? calculateColor(m_Array[i]) : sf::Color(255, 255, 255);
 
 		if (selected.size() > 0) {
-			if (std::find(selected.begin(), selected.end(), i) != selected.end())
+			if (std::find(selected.begin(), selected.end(), i - m_SliceOffset) != selected.end())
 				color = m_Rainbow ? sf::Color(0, 0, 0) : sf::Color(255, 0, 0);
 		}
 
@@ -49,8 +48,8 @@ void SortArray::drawVector(const std::vector<int> &selected) {
 		else if (selected.size() > 1) {
 			int sum = 0;
 
-			for (int ndx : selected) {
-				sum += ndx;
+			for (auto &ndx : selected) {
+				sum += ndx + m_SliceOffset;
 			}
 
 			m_Player.playValue(m_Array[sum / selected.size()]);

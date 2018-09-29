@@ -10,6 +10,7 @@
 #include "ArrayRenderer/circle_renderer.h"
 #include "ArrayRenderer/bar_renderer.h"
 #include "ArrayRenderer/square_renderer.h"
+#include "ArrayRenderer/line_renderer.h"
 
 unsigned int WIDTH = 1280, HEIGHT = 720;
 bool FULLSCREEN = false, RAINBOW = false, SOUND = true;
@@ -79,6 +80,14 @@ void startApp(const std::string &algorithm) {
 		runSort(arr, algorithm);
 	}
 		break;
+	case 3:
+	{
+		LineRenderer renderer(window, COUNT);
+		SortArray arr(window, COUNT, DELAY, algName, RAINBOW, SOUND, renderer);
+
+		runSort(arr, algorithm);
+	}
+		break;
 	}
 
 	while (window.isOpen()) {
@@ -135,6 +144,8 @@ std::string parseArgs(int argc, char* argv[]) {
 					if (!RAINBOW)
 						RAINBOW = true;
 				}
+				else if (!strcmp(argv[i], "line"))
+					RENDERER = 3;
 				else if (strcmp(argv[i], "bar") != 0)
 					throw new std::logic_error("There is no renderer by the specified name.");
 			}

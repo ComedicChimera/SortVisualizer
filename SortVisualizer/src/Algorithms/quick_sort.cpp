@@ -16,7 +16,7 @@ namespace Sort {
 			if (arr[j] <= pivot) {
 
 				arr.swap(i, j);
-				arr.draw(i, j);
+				arr.draw(2, i, j);
 
 				i++;
 			}
