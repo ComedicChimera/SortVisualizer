@@ -37,6 +37,8 @@ The visualizer supports the following algorithms:
  - Tim Sort
  - Intro Sort
  - Strand Sort
+ - Comb Sort
+ - Tree Sort
 
 ## Visualizers
 

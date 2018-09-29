@@ -27,7 +27,9 @@ namespace Sort {
 			"OddEven",
 			"Tim",
 			"Intro",
-			"Strand"
+			"Strand",
+			"Comb",
+			"Tree"
 		};
 
 		auto item = std::find(std::begin(algorithms), std::end(algorithms), alg);
@@ -104,6 +106,12 @@ namespace Sort {
 				break;
 			case 22:
 				strandSort(arr);
+				break;
+			case 23:
+				combSort(arr);
+				break;
+			case 24:
+				treeSort(arr);
 				break;
 			}
 

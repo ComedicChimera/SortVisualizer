@@ -50,6 +50,10 @@ namespace Sort {
 
 	void strandSort(SortArray&);
 
+	void combSort(SortArray&);
+
+	void treeSort(SortArray&);
+
 	bool sort(const std::string&, SortArray&);
 
 	// util

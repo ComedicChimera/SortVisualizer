@@ -135,6 +135,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Algorithms\bitonic_sort.cpp" />
+    <ClCompile Include="src\Algorithms\comb_sort.cpp" />
     <ClCompile Include="src\Algorithms\cycle_sort.cpp" />
     <ClCompile Include="src\Algorithms\gnome_sort.cpp" />
     <ClCompile Include="src\Algorithms\gravity_sort.cpp" />
@@ -152,6 +153,7 @@
     <ClCompile Include="src\Algorithms\strand_sort.cpp" />
     <ClCompile Include="src\Algorithms\time_sort.cpp" />
     <ClCompile Include="src\Algorithms\tim_sort.cpp" />
+    <ClCompile Include="src\Algorithms\tree_sort.cpp" />
     <ClCompile Include="src\ArrayRenderer\bar_renderer.cpp" />
     <ClCompile Include="src\ArrayRenderer\circle_renderer.cpp" />
     <ClCompile Include="src\ArrayRenderer\square_renderer.cpp" />

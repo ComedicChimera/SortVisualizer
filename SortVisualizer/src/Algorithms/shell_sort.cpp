@@ -3,6 +3,7 @@
 namespace Sort {
 	void shellSort(SortArray &arr) {
 		int gaps[9] = { 1, 4, 10, 23, 57, 132, 301, 701 };
+		std::vector<int> marks;
 
 		for (int g = 8; g > -1; g--) {
 			int gap = gaps[g];
@@ -19,12 +20,15 @@ namespace Sort {
 					arr[j] = arr[j - gap];
 					j -= gap;
 
-					arr.draw(2, j, j - gap);
+					marks.push_back(j);
 				}
 
 				arr[j] = temp;
 
-				arr.draw(1, j);
+				marks.push_back(j);
+
+				arr.drawVector(marks);
+				marks.clear();
 			}
 		}
 
