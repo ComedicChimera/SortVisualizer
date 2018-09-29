@@ -3,7 +3,7 @@
 namespace Sort {
 	void heapify(SortArray &arr, int heapSize, int i) {
 		int l = 2 * i + 1;
-		int r = 2 * i + 2;
+		int r = l + 1;
 
 		int largest = i;
 

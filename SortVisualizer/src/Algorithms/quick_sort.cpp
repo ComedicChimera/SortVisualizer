@@ -9,27 +9,27 @@ namespace Sort {
 		arr.draw(0);
 	}
 
-	void quickSort(SortArray &arr, int low, int high) {
-		auto partition = [&]() -> int {
-			int i = low, pivot = arr[high];
+	int partition(SortArray &arr, int low, int high) {
+		int i = low, pivot = arr[high];
 
-			for (int j = low; j < high; j++) {
-				if (arr[j] <= pivot) {
+		for (int j = low; j < high; j++) {
+			if (arr[j] <= pivot) {
 
-					arr.swap(i, j);
-					i++;
+				arr.swap(i, j);
+				arr.draw(i, j);
 
-					arr.draw(i, j);
-				}
+				i++;
 			}
+		}
 
-			arr.swap(i, high);
+		arr.swap(i, high);
 
-			return i;
-		};
+		return i;
+	}
 
+	void quickSort(SortArray &arr, int low, int high) {
 		if (low < high) {
-			int pi = partition();
+			int pi = partition(arr, low, high);
 
 			quickSort(arr, low, pi - 1);
 			quickSort(arr, pi + 1, high);

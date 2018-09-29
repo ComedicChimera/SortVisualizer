@@ -27,7 +27,7 @@ void SortArray::drawVector(const std::vector<int> &selected) {
 
 	drawText();
 
-	for (int i = 0; i < size; i++) {
+	for (int i = 0; i < m_TrueSize; i++) {
 		sf::Color color = m_Rainbow ? calculateColor(m_Array[i]) : sf::Color(255, 255, 255);
 
 		if (selected.size() > 0) {
@@ -117,7 +117,7 @@ void SortArray::drawText() {
 }
 
 sf::Color SortArray::calculateColor(int value) {
-	int i = (255 * value) / size;
+	int i = (255 * value) / m_TrueSize;
 
 	int r = round(sin(0.024 * i + 0) * 127 + 128);
 	int g = round(sin(0.024 * i + 4) * 127 + 128);

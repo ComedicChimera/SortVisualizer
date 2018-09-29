@@ -46,5 +46,14 @@ namespace Sort {
 
 	void timSort(SortArray&);
 
+	void introSort(SortArray&);
+
+	void strandSort(SortArray&);
+
 	bool sort(const std::string&, SortArray&);
+
+	// util
+	void merge(SortArray&, int, int, int);
+	int partition(SortArray&, int, int);
+	void insertionSort(SortArray&, int, int);
 }

@@ -140,6 +140,7 @@
     <ClCompile Include="src\Algorithms\gravity_sort.cpp" />
     <ClCompile Include="src\Algorithms\heap_sort.cpp" />
     <ClCompile Include="src\Algorithms\insertion_sort.cpp" />
+    <ClCompile Include="src\Algorithms\intro_sort.cpp" />
     <ClCompile Include="src\Algorithms\merge_sort.cpp" />
     <ClCompile Include="src\Algorithms\odd_even_sort.cpp" />
     <ClCompile Include="src\Algorithms\quick_sort.cpp" />
@@ -148,6 +149,7 @@
     <ClCompile Include="src\Algorithms\shell_sort.cpp" />
     <ClCompile Include="src\Algorithms\simple_sort.cpp" />
     <ClCompile Include="src\Algorithms\stooge_sort.cpp" />
+    <ClCompile Include="src\Algorithms\strand_sort.cpp" />
     <ClCompile Include="src\Algorithms\time_sort.cpp" />
     <ClCompile Include="src\Algorithms\tim_sort.cpp" />
     <ClCompile Include="src\ArrayRenderer\bar_renderer.cpp" />

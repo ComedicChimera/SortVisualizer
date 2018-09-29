@@ -12,6 +12,8 @@ class SortArray {
 	
 	unsigned int m_Delay, m_Height;
 
+	int m_SliceOffset, m_TrueSize;
+
 	const std::string m_Title;
 
 	bool m_Rainbow, m_Sound;
@@ -35,6 +37,9 @@ public:
 	void draw(unsigned int count, ...);
 	void drawVector(const std::vector<int>&);
 	bool validate();
+
+	void slice(int, int);
+	void restore();
 
 	unsigned int size;
 };

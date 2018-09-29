@@ -25,7 +25,9 @@ namespace Sort {
 			"RadixMSD",
 			"Time",
 			"OddEven",
-			"Tim"
+			"Tim",
+			"Intro",
+			"Strand"
 		};
 
 		auto item = std::find(std::begin(algorithms), std::end(algorithms), alg);
@@ -96,6 +98,12 @@ namespace Sort {
 				break;
 			case 20:
 				timSort(arr);
+				break;
+			case 21:
+				introSort(arr);
+				break;
+			case 22:
+				strandSort(arr);
 				break;
 			}
 

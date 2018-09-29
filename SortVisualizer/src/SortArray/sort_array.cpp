@@ -12,6 +12,7 @@ SortArray::SortArray(sf::RenderWindow &window, unsigned int size, unsigned int d
 	, m_Player(size)
 	, m_Sound(sound)
 	, m_Renderer(renderer)
+	, m_TrueSize(size)
 
 	, size(size)
 {

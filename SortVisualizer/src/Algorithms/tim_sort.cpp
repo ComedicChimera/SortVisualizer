@@ -24,37 +24,6 @@ namespace Sort {
 		}
 	}
 
-	void timMerge(SortArray &arr, int l, int m, int h) {
-		std::vector<int> sorted;
-		int i = l, j = m;
-
-		while (i < m && j < h) {
-			if (arr[i] <= arr[j]) {
-				sorted.push_back(arr[i]);
-				i++;
-			}
-			else {
-				sorted.push_back(arr[j]);
-				j++;
-			}
-		}
-
-		while (i < m) {
-			sorted.push_back(arr[i]);
-			i++;
-		}
-
-		while (j < h) {
-			sorted.push_back(arr[j]);
-			j++;
-		}
-
-		for (int k = 0; k < sorted.size(); k++) {
-			arr[l + k] = sorted[k];
-			arr.draw(1, l + k);
-		}
-	}
-
 	void timSort(SortArray &arr) {
 		for (int i = 0; i < arr.size; i += RUN) {
 			insertionSort(arr, i, arr.size < i + RUN ? arr.size : i + RUN);
@@ -65,7 +34,7 @@ namespace Sort {
 				int m = l + s;
 				int h = l + 2 * s < arr.size ? l + 2 * s : arr.size;
 
-				timMerge(arr, l, m, h);
+				merge(arr, l, h, m);
 			}
 		}
 
