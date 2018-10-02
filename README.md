@@ -39,6 +39,8 @@ The visualizer supports the following algorithms:
  - Strand Sort
  - Comb Sort
  - Tree Sort
+ 
+ ***Note*** *The radix sorts in bases 2 and 4 only work on sets of numbers that are in that base.  So passing a count of 500 to Radix2 will not work.*
 
 ## Visualizers
 
