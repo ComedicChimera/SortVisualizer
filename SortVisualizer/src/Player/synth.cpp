@@ -60,16 +60,10 @@ void Synth::makeSound(float freq, int duration) {
 	m_AudioData.clear();
 
 	int sampleCount = duration * 44;
-	int amplitude = m_Amplitude;
+	double x = 0, increment = freq / 44100;
 	for (int i = 0; i < sampleCount; i++) {
-		if (i < sampleCount / 5) 
-			amplitude = floor(m_Amplitude * (i / (double)sampleCount) * 5);
-		else if (i > sampleCount / 2) 
-			amplitude = floor(m_Amplitude * ((sampleCount - i) / (double)sampleCount));
-		else
-			amplitude = m_Amplitude;
-
-		m_AudioData.push_back(amplitude * sin(TAU * (freq / 44100) * i));
+		m_AudioData.push_back(floor(m_Amplitude * envelope(i, sampleCount) * sin(x * TAU)));
+		x += increment;
 	}
 
 	m_Lock.unlock();
@@ -78,6 +72,29 @@ void Synth::makeSound(float freq, int duration) {
 		play();
 		m_Started = true;
 	}
+}
+
+// ASDR Envelope Code -> Credit to Timo Bingmann
+// https://github.com/bingmann/sound-of-sorting/blob/master/src/SortSound.cpp
+double Synth::envelope(int i, int duration) {
+	double x = (double)i / duration;
+	if (x > 1.0) x = 1.0;
+
+	static const double attack = 0.025;
+	static const double decay = 0.1;
+	static const double sustain = 0.9;
+	static const double release = 0.3;
+
+	if (x < attack)
+		return 1.0 / attack * x;
+
+	if (x < attack + decay)
+		return 1.0 - (x - attack) / decay * (1.0 - sustain);
+
+	if (x < 1.0 - release)
+		return sustain;
+
+	return sustain / release * (1.0 - x);
 }
 
 bool Synth::busy() {

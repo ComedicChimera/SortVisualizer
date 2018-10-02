@@ -28,5 +28,7 @@ namespace Sort {
 				}
 			}
 		}
+
+		arr.draw(0);
 	}
 }

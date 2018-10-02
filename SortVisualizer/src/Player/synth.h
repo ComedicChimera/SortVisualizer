@@ -14,6 +14,8 @@ class Synth : public sf::SoundStream {
 
 	const float TAU = 6.28318;
 
+	double envelope(int, int);
+
 public:
 	Synth(int);
 	Synth(const Synth&);
