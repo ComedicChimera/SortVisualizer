@@ -1,6 +1,7 @@
 #include "../sort.h"
 
 #include <cmath>
+#include <iostream>
 
 namespace Sort {
 	void radixLSDSort(SortArray &arr, int base) {
@@ -20,30 +21,34 @@ namespace Sort {
 					maxBucketSize = buckets[i].size();
 			}
 
-			int offset = 0, ndx = 0;
-			std::vector<int> indices;
+			int offset = 0, ndx = 0, sOffset = 0;
+			std::vector<int> marked;
 
 			while (offset < maxBucketSize) {
 				for (int j = 0; j < base; j++) {
 					if (offset >= buckets[j].size())
-						break;
+						continue;
 
-					ndx = j * buckets[j].size() + offset;
+					ndx = sOffset + offset;
+
 					arr[ndx] = buckets[j][offset];
 
-					indices.push_back(ndx);
+					marked.push_back(ndx);
+
+					sOffset += buckets[j].size();
 				}
 
-				arr.drawVector(indices);
-				indices.clear();
+				arr.drawVector(marked);
+				marked.clear();
 
+				sOffset = 0;
 				offset++;
 			}
 
-			arr.draw(0);
-
 			it++;
 		}
+
+		arr.draw(0);
 	}
 
 	void radixMSDSort(SortArray &arr, int power, int lo, int hi) {

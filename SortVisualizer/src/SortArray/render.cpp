@@ -42,17 +42,8 @@ void SortArray::drawVector(const std::vector<int> &selected) {
 	checkClosed();
 
 	if (m_Sound) {
-		if (selected.size() == 1) {
-			m_Player.playValue(m_Array[selected[0]]);
-		}
-		else if (selected.size() > 1) {
-			int sum = 0;
-
-			for (auto &ndx : selected) {
-				sum += ndx + m_SliceOffset;
-			}
-
-			m_Player.playValue(m_Array[sum / selected.size()]);
+		for (int index : selected) {
+			m_Player.playValue(m_Array[index]);
 		}
 	}
 
