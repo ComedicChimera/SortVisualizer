@@ -1,7 +1,6 @@
 #include "../sort.h"
 
 #include <cmath>
-#include <iostream>
 
 namespace Sort {
 	void radixLSDSort(SortArray &arr, int base) {

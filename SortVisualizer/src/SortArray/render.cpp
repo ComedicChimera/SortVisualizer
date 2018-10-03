@@ -43,7 +43,7 @@ void SortArray::drawVector(const std::vector<int> &selected) {
 
 	if (m_Sound) {
 		for (int index : selected) {
-			m_Player.playValue(m_Array[index]);
+			m_Player.playValue(m_Array[index] + m_SliceOffset);
 		}
 	}
 
@@ -79,7 +79,7 @@ bool SortArray::validate() {
 
 		checkClosed();
 
-		sleep(1);
+		sleep(10);
 	}
 
 	m_Window.clear(sf::Color(90, 90, 90, 255));
