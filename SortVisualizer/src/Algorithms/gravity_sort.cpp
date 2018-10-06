@@ -42,8 +42,10 @@ namespace Sort {
 					y++;
 			}
 
-			arr.draw(0);
+			arr.draw(1, x);
 		}
+
+		arr.draw(0);
 
 		delete[] gravityArr;
 	}

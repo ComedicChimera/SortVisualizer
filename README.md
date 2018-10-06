@@ -43,11 +43,13 @@ The visualizer supports the following algorithms:
 ## Visualizers
 
  - Traditional (bar)
- - Disparity Circle (circle)
+ - Color Circle (circle)
  - Color Square (square)
  - Spread Line (line)
+ - Disparity Ring (ring)
+ - Sine Wave (wave)
 
-***Note*** *Color square always runs in rainbow mode, regardless of whether or not the flag is specified.*
+***Note*** *Color square and color circle always runs in rainbow mode, regardless of whether or not the flag is specified.*
 
 ## Requirements
 

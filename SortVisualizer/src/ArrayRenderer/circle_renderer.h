@@ -3,13 +3,12 @@
 #include "array_renderer.h"
 
 class CircleRenderer : public ArrayRenderer {
-	int m_Radius;
-	double m_CenterX, m_CenterY;
+	int m_CenterDist, m_TriWidth, m_CenterX;
 
-	double m_AngleIncrement;
+	const double m_PI = 3.141592;
 
 public:
-	CircleRenderer(sf::RenderWindow &window, int size);
+	CircleRenderer(sf::RenderWindow&, int);
 
-	void drawElement(int, int, const sf::Color&);
+	void drawElement(int, int, const sf::Color&) override;
 };

@@ -1,36 +1,31 @@
 #include "circle_renderer.h"
 
-#include <cmath>
-
 CircleRenderer::CircleRenderer(sf::RenderWindow &window, int size) 
 	: ArrayRenderer(window, size)
 {
-	auto dimensions = window.getSize();
+	auto dim = window.getSize();
+	
+	int centerPoint = dim.y / 2;
+	m_CenterDist = centerPoint - 70;
 
-	m_CenterX = dimensions.x / 2.0;
-	m_CenterY = (dimensions.y + 70) / 2.0;
+	m_TriWidth = dim.x / size;
 
-	m_Radius = m_CenterY - 90;
-
-	m_AngleIncrement = ((360.0 * 3.14159265) / (m_Size * 180));
+	m_CenterX = dim.x / 2;
 }
 
 void CircleRenderer::drawElement(int index, int value, const sf::Color &color) {
-	static bool print = true;
+	double a1 = 360 * (index / (double)m_Size),
+		a2 = 360 * ((index + 1.0) / m_Size);
 
-	double h = abs(m_Size - (value - index)) / (m_Size + 1.0) * m_Radius;
+	sf::ConvexShape triangle(3);
 
-	double angle = m_AngleIncrement * index;
+	triangle.setPoint(0, sf::Vector2f(m_CenterX, 70 + m_CenterDist));
 
-	double s1 = sin(angle) * h, s2 = cos(angle) * h;
+	triangle.setPoint(1, sf::Vector2f(m_CenterX + m_CenterDist * sin(a1 * (m_PI / 180)), 70 + m_CenterDist * (1 - cos(a1 * (m_PI / 180)))));
+	triangle.setPoint(2, sf::Vector2f(m_CenterX + m_CenterDist * sin(a2 * (m_PI / 180)), 70 + m_CenterDist * (1 - cos(a2 * (m_PI / 180)))));
+	
 
-	sf::RectangleShape rect(sf::Vector2f(3, 3));
-	rect.setPosition(sf::Vector2f(m_CenterX + s2 - 2.5, m_CenterY - s1 - 2.5));
+	triangle.setFillColor(color);
 
-	rect.setFillColor(color);
-
-	m_Window.draw(rect);
-
-	if (index == m_Size - 1)
-		print = false;
+	m_Window.draw(triangle);
 }
