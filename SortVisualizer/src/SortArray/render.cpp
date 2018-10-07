@@ -95,7 +95,13 @@ bool SortArray::validate() {
 
 void SortArray::drawText() {
 	char data[100];
-	sprintf_s(data, 100, "Algorithm: %s\nDelay: %d ms", m_Title.c_str(), m_Delay);
+
+	if (m_Title == "Shuffling...") {
+		memset(data, 0, 100);
+		memcpy(data, m_Title.c_str(), 12);
+	}	
+	else
+		sprintf_s(data, 100, "Algorithm: %s\nDelay: %d ms", m_Title.c_str(), m_Delay);
 
 	sf::Font font;
 	font.loadFromFile("C:/Windows/Fonts/arial.ttf");

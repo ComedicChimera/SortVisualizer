@@ -54,6 +54,8 @@ namespace Sort {
 
 	void treeSort(SortArray&);
 
+	void cartesianTreeSort(SortArray&);
+
 	bool sort(const std::string&, SortArray&);
 
 	// util

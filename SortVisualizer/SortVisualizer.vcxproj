@@ -135,6 +135,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Algorithms\bitonic_sort.cpp" />
+    <ClCompile Include="src\Algorithms\cartesian_sort.cpp" />
     <ClCompile Include="src\Algorithms\comb_sort.cpp" />
     <ClCompile Include="src\Algorithms\cycle_sort.cpp" />
     <ClCompile Include="src\Algorithms\gnome_sort.cpp" />

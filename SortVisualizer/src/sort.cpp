@@ -29,7 +29,8 @@ namespace Sort {
 			"Intro",
 			"Strand",
 			"Comb",
-			"Tree"
+			"Tree",
+			"Cartesian"
 		};
 
 		auto item = std::find(std::begin(algorithms), std::end(algorithms), alg);
@@ -112,6 +113,9 @@ namespace Sort {
 				break;
 			case 24:
 				treeSort(arr);
+				break;
+			case 25:
+				cartesianTreeSort(arr);
 				break;
 			}
 

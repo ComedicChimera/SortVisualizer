@@ -39,6 +39,7 @@ The visualizer supports the following algorithms:
  - Strand Sort
  - Comb Sort
  - Tree Sort
+ - Cartesian Tree Sort
 
 ## Visualizers
 
@@ -80,6 +81,7 @@ The mandatory argument `sort-name` is the name of the sorting algorithm minus it
 | MSD Radix Sort | RadixMSD |
 | Time Sort (Mul 4) + Insertion Sort | Time |
 | Odd Even Sort | OddEven |
+| Cartesian Tree Sort | Cartesian |
 
 All names that are not in this table follow the pattern outlined above.
 
@@ -104,5 +106,6 @@ These can be specified in any order and are all optional.
 | `-f` | The sort will run in fullscreen |
 | `-rainbow` | The sort will now run in rainbow mode |
 | `-ns` | No sound will be played during sort |
+| `-ss` | The shuffling of the array will be shown before the sort begins |
 
 ***Note*** *Rainbow mode does not run a visible validation check at the end for aesthetic purposes.*

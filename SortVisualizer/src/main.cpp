@@ -15,7 +15,7 @@
 #include "ArrayRenderer/wave_renderer.h"
 
 unsigned int WIDTH = 1280, HEIGHT = 720;
-bool FULLSCREEN = false, RAINBOW = false, SOUND = true;
+bool FULLSCREEN = false, RAINBOW = false, SOUND = true, SHOW_SHUFFLE = false;
 int COUNT = 256, DELAY = 1;
 unsigned int RENDERER = 0;
 
@@ -46,6 +46,9 @@ std::string getAlgorithmName(std::string algID) {
 	else if (algID == "OddEven") {
 		return "Odd Even Sort";
 	}
+	else if (algID == "Cartesian") {
+		return "Cartesian Tree Sort";
+	}
 	else
 		return algID + " Sort";
 }
@@ -63,6 +66,8 @@ void startApp(const std::string &algorithm) {
 		BarRenderer renderer(window, COUNT);
 		SortArray arr(window, COUNT, DELAY, algName, RAINBOW, SOUND, renderer);
 
+		arr.shuffle(SHOW_SHUFFLE);
+
 		runSort(arr, algorithm);
 	}
 		break;
@@ -70,6 +75,8 @@ void startApp(const std::string &algorithm) {
 	{
 		CircleRenderer renderer(window, COUNT);
 		SortArray arr(window, COUNT, DELAY, algName, RAINBOW, SOUND, renderer);
+
+		arr.shuffle(SHOW_SHUFFLE);
 
 		runSort(arr, algorithm);
 	}
@@ -79,6 +86,8 @@ void startApp(const std::string &algorithm) {
 		SquareRenderer renderer(window, COUNT);
 		SortArray arr(window, COUNT, DELAY, algName, RAINBOW, SOUND, renderer);
 
+		arr.shuffle(SHOW_SHUFFLE);
+
 		runSort(arr, algorithm);
 	}
 		break;
@@ -86,6 +95,8 @@ void startApp(const std::string &algorithm) {
 	{
 		LineRenderer renderer(window, COUNT);
 		SortArray arr(window, COUNT, DELAY, algName, RAINBOW, SOUND, renderer);
+
+		arr.shuffle(SHOW_SHUFFLE);
 
 		runSort(arr, algorithm);
 	}
@@ -95,6 +106,8 @@ void startApp(const std::string &algorithm) {
 		WaveRenderer renderer(window, COUNT);
 		SortArray arr(window, COUNT, DELAY, algName, RAINBOW, SOUND, renderer);
 
+		arr.shuffle(SHOW_SHUFFLE);
+
 		runSort(arr, algorithm);
 	}
 		break;
@@ -102,6 +115,8 @@ void startApp(const std::string &algorithm) {
 	{
 		RingRenderer renderer(window, COUNT);
 		SortArray arr(window, COUNT, DELAY, algName, RAINBOW, SOUND, renderer);
+
+		arr.shuffle(SHOW_SHUFFLE);
 
 		runSort(arr, algorithm);
 	}
@@ -199,6 +214,10 @@ std::string parseArgs(int argc, char* argv[]) {
 			}
 			else if (!strcmp(argv[i], "-ns")) {
 				SOUND = false;
+				continue;
+			}
+			else if (!strcmp(argv[i], "-ss")) {
+				SHOW_SHUFFLE = true;
 				continue;
 			}
 			else {

@@ -21,20 +21,40 @@ SortArray::SortArray(sf::RenderWindow &window, unsigned int size, unsigned int d
 	for (int i = 0; i < size; i++)
 		m_Array[i] = i;
 
-	shuffle();
-
 	auto windowSize = window.getSize();
 
 	m_Height = windowSize.y;
 }
 
-void SortArray::shuffle() {
+void SortArray::shuffle(bool showShuffle) {
 	std::srand(std::time(NULL));
 
-	for (int i = size - 1; i > 1; i--) {
-		int rand = std::rand() % i;
+	if (showShuffle) {
+		auto algName = m_Title;
+		m_Title = "Shuffling...";
 
-		swap(i, rand);
+		draw(0);
+		sleep(500);
+
+		for (int i = size - 1; i > 1; i--) {
+			int rand = std::rand() % i;
+
+			swap(i, rand);
+
+			draw(2, i, rand);
+		}
+
+		draw(0);
+		sleep(500);
+		
+		m_Title = algName;
+	}
+	else {
+		for (int i = size - 1; i > 1; i--) {
+			int rand = std::rand() % i;
+
+			swap(i, rand);
+		}
 	}
 }
 
