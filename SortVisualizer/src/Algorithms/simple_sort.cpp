@@ -57,4 +57,37 @@ namespace Sort {
 
 		arr.draw(0);
 	}
+
+	void doubleSelectionSort(SortArray &arr) {
+		int i = 0, j = arr.size - 1;
+
+		int ndx, val = arr.size + 1;
+		while (i < j) {
+			for (int k = i; k <= j; k++) {
+				if (arr[k] < val) {
+					ndx = k;
+					val = arr[k];
+				}
+			}
+
+			arr.swap(ndx, i);
+			arr.draw(2, ndx, i);
+
+			i++;
+
+			for (int k = j; k >= i; k--) {
+				if (arr[k] > val) {
+					ndx = k;
+					val = arr[k];
+				}
+			}
+
+			arr.swap(ndx, j);
+			arr.draw(2, ndx, j);
+
+			j--;
+		}
+
+		arr.draw(0);
+	}
 }

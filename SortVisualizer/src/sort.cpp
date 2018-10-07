@@ -30,7 +30,9 @@ namespace Sort {
 			"Strand",
 			"Comb",
 			"Tree",
-			"Cartesian"
+			"Cartesian",
+			"Dutch",
+			"DoubleSelect"
 		};
 
 		auto item = std::find(std::begin(algorithms), std::end(algorithms), alg);
@@ -116,6 +118,12 @@ namespace Sort {
 				break;
 			case 25:
 				cartesianTreeSort(arr);
+				break;
+			case 26:
+				dutchFlagSort(arr);
+				break;
+			case 27:
+				doubleSelectionSort(arr);
 				break;
 			}
 

@@ -40,6 +40,8 @@ The visualizer supports the following algorithms:
  - Comb Sort
  - Tree Sort
  - Cartesian Tree Sort
+ - Dutch Flag Sort
+ - Double Selection Sort
 
 ## Visualizers
 
@@ -82,6 +84,8 @@ The mandatory argument `sort-name` is the name of the sorting algorithm minus it
 | Time Sort (Mul 4) + Insertion Sort | Time |
 | Odd Even Sort | OddEven |
 | Cartesian Tree Sort | Cartesian |
+| Dutch Flag Sort | Dutch |
+| Double Selection Sort | DoubleSelect |
 
 All names that are not in this table follow the pattern outlined above.
 

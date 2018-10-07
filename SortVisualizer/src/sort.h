@@ -56,6 +56,10 @@ namespace Sort {
 
 	void cartesianTreeSort(SortArray&);
 
+	void dutchFlagSort(SortArray&);
+
+	void doubleSelectionSort(SortArray&);
+
 	bool sort(const std::string&, SortArray&);
 
 	// util

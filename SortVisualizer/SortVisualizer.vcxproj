@@ -138,6 +138,7 @@
     <ClCompile Include="src\Algorithms\cartesian_sort.cpp" />
     <ClCompile Include="src\Algorithms\comb_sort.cpp" />
     <ClCompile Include="src\Algorithms\cycle_sort.cpp" />
+    <ClCompile Include="src\Algorithms\dutch_flag_sort.cpp" />
     <ClCompile Include="src\Algorithms\gnome_sort.cpp" />
     <ClCompile Include="src\Algorithms\gravity_sort.cpp" />
     <ClCompile Include="src\Algorithms\heap_sort.cpp" />

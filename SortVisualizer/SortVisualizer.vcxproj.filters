@@ -117,6 +117,9 @@
     <ClCompile Include="src\Algorithms\cartesian_sort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Algorithms\dutch_flag_sort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\sort_array.h">

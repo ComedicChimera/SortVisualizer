@@ -49,6 +49,12 @@ std::string getAlgorithmName(std::string algID) {
 	else if (algID == "Cartesian") {
 		return "Cartesian Tree Sort";
 	}
+	else if (algID == "Dutch") {
+		return "Dutch Flag Sort";
+	}
+	else if (algID == "DoubleSelect") {
+		return "Double Selection Sort";
+	}
 	else
 		return algID + " Sort";
 }
