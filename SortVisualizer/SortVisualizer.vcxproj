@@ -139,6 +139,7 @@
     <ClCompile Include="src\Algorithms\comb_sort.cpp" />
     <ClCompile Include="src\Algorithms\cycle_sort.cpp" />
     <ClCompile Include="src\Algorithms\dutch_flag_sort.cpp" />
+    <ClCompile Include="src\Algorithms\flash_sort.cpp" />
     <ClCompile Include="src\Algorithms\gnome_sort.cpp" />
     <ClCompile Include="src\Algorithms\gravity_sort.cpp" />
     <ClCompile Include="src\Algorithms\heap_sort.cpp" />
@@ -151,6 +152,7 @@
     <ClCompile Include="src\Algorithms\ripple_sort.cpp" />
     <ClCompile Include="src\Algorithms\shell_sort.cpp" />
     <ClCompile Include="src\Algorithms\simple_sort.cpp" />
+    <ClCompile Include="src\Algorithms\smooth_sort.cpp" />
     <ClCompile Include="src\Algorithms\stooge_sort.cpp" />
     <ClCompile Include="src\Algorithms\strand_sort.cpp" />
     <ClCompile Include="src\Algorithms\time_sort.cpp" />

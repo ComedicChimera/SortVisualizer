@@ -42,6 +42,8 @@ The visualizer supports the following algorithms:
  - Cartesian Tree Sort
  - Dutch Flag Sort
  - Double Selection Sort
+ - Smooth Sort
+ - Flash Sort
 
 ## Visualizers
 

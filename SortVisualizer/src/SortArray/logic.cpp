@@ -24,7 +24,6 @@ void SortArray::swap(int a, int b) {
 		return;
 	}
 
-
 	throw new std::out_of_range("Index out of range of sorted array.");
 }
 

@@ -60,6 +60,10 @@ namespace Sort {
 
 	void doubleSelectionSort(SortArray&);
 
+	void flashSort(SortArray&);
+
+	void smoothSort(SortArray&);
+
 	bool sort(const std::string&, SortArray&);
 
 	// util
