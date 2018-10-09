@@ -113,5 +113,6 @@ These can be specified in any order and are all optional.
 | `-rainbow` | The sort will now run in rainbow mode |
 | `-ns` | No sound will be played during sort |
 | `-ss` | The shuffling of the array will be shown before the sort begins |
+| `-nw` | Close the window after the sort has finished (delay of ~500ms) |
 
 ***Note*** *Rainbow mode does not run a visible validation check at the end for aesthetic purposes.*

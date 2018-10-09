@@ -15,7 +15,7 @@
 #include "ArrayRenderer/wave_renderer.h"
 
 unsigned int WIDTH = 1280, HEIGHT = 720;
-bool FULLSCREEN = false, RAINBOW = false, SOUND = true, SHOW_SHUFFLE = false;
+bool FULLSCREEN = false, RAINBOW = false, SOUND = true, SHOW_SHUFFLE = false, WAIT = true;
 int COUNT = 256, DELAY = 1;
 unsigned int RENDERER = 0;
 
@@ -129,13 +129,20 @@ void startApp(const std::string &algorithm) {
 		break;
 	}
 
-	while (window.isOpen()) {
-		sf::Event event;
-		if (window.pollEvent(event)) {
-			if (event.type == sf::Event::Closed)
-				window.close();
+	if (WAIT) {
+		while (window.isOpen()) {
+			sf::Event event;
+			if (window.pollEvent(event)) {
+				if (event.type == sf::Event::Closed)
+					window.close();
+			}
 		}
 	}
+	else {
+		std::this_thread::sleep_for(std::chrono::milliseconds(500));
+		window.close();
+	}
+	
 }
 
 int safeConvert(const char* argName, const std::string &value) {
@@ -224,6 +231,10 @@ std::string parseArgs(int argc, char* argv[]) {
 			}
 			else if (!strcmp(argv[i], "-ss")) {
 				SHOW_SHUFFLE = true;
+				continue;
+			}
+			else if (!strcmp(argv[i], "-nw")) {
+				WAIT = false;
 				continue;
 			}
 			else {
