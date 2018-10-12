@@ -36,26 +36,28 @@ sort_names = [
 
 specializations = {
     'Bubble': (128, 2),
-    'Insertion': (64, 4),
+    'Insertion': (128, 4),
     'Stooge': (128, 4),
-    'Ripple': (128, 10),
-    'Gnome': (64, 2),
+    'Ripple': (128, 2),
+    'Gnome': (128, 4),
     'Cycle': (512, 25),
-    'Radix': (1024, 30),
+    'Radix': (512, 30),
     'Tree': (512, 25),
     'Cartesian': (256, 10),
-    'Flash': (512, 10),
     'Pancake': (64, 2),
     'Time': (128, 35),
-    'OddEven': (64, 2)
+    'OddEven': (128, 2),
+    'Strand': (128, 2),
+    'Selection': (512, 15),
+    'DoubleSelect': (512, 25)
 }
 
 
 def call_sort(sr, c=None, d=None):
     if not c and not d:
-        proc = subprocess.Popen(f'../build/Release/SortVisualizer.exe {sr} -c 512 -d 15 -f -w 1920 -h 1080 -nw -v circle'.split(' '))
+        proc = subprocess.Popen(f'../build/Release/SortVisualizer.exe {sr} -d 10 -f -w 1920 -h 1080 -nw -v circle -ss'.split(' '))
     else:
-        proc = subprocess.Popen(f'../build/Release/SortVisualizer.exe {sr} -c {c} -d {d} -f -w 1920 -h 1080 -nw -v circle'.split(' '))
+        proc = subprocess.Popen(f'../build/Release/SortVisualizer.exe {sr} -c {c} -d {d} -f -w 1920 -h 1080 -nw -v circle -ss'.split(' '))
     proc.wait(timeout=90)
     proc.terminate()
 
