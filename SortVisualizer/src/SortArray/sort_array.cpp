@@ -30,6 +30,9 @@ void SortArray::shuffle(bool showShuffle) {
 	std::srand(std::time(NULL));
 
 	if (showShuffle) {
+		int delay = m_Delay;
+		m_Delay = 3;
+
 		auto algName = m_Title;
 		m_Title = "Shuffling...";
 
@@ -48,6 +51,7 @@ void SortArray::shuffle(bool showShuffle) {
 		sleep(500);
 		
 		m_Title = algName;
+		m_Delay = delay;
 	}
 	else {
 		for (int i = size - 1; i > 1; i--) {
