@@ -44,6 +44,10 @@ The visualizer supports the following algorithms:
  - Double Selection Sort
  - Smooth Sort
  - Flash Sort
+ - Shatter Sort
+ - Sample Sort
+ - In Place Merge Sort
+ - In Place LSD Radix Sort (Base 10)
 
 ## Visualizers
 
@@ -88,6 +92,8 @@ The mandatory argument `sort-name` is the name of the sorting algorithm minus it
 | Cartesian Tree Sort | Cartesian |
 | Dutch Flag Sort | Dutch |
 | Double Selection Sort | DoubleSelect |
+| In Place Merge Sort | InPlaceMerge |
+| In Place LSD Radix Sort (Base 10) | InPlaceRadix |
 
 All names that are not in this table follow the pattern outlined above.
 

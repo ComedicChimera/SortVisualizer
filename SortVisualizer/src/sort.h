@@ -64,6 +64,16 @@ namespace Sort {
 
 	void smoothSort(SortArray&);
 
+	void shatterSort(SortArray&);
+
+	void inPlaceMergeSort(SortArray&);
+	
+	void wikiSort(SortArray&);
+
+	void sampleSort(SortArray&);
+
+	void inPlaceRadixLSDSort(SortArray&);
+
 	bool sort(const std::string&, SortArray&);
 
 	// util

@@ -34,7 +34,12 @@ namespace Sort {
 			"Dutch",
 			"DoubleSelect",
 			"Flash",
-			"Smooth"
+			"Smooth",
+			"Shatter",
+			"InPlaceMerge",
+			"Wiki",
+			"Sample",
+			"InPlaceRadix"
 		};
 
 		auto item = std::find(std::begin(algorithms), std::end(algorithms), alg);
@@ -132,6 +137,21 @@ namespace Sort {
 				break;
 			case 29:
 				smoothSort(arr);
+				break;
+			case 30:
+				shatterSort(arr);
+				break;
+			case 31:
+				inPlaceMergeSort(arr);
+				break;
+			case 32:
+				wikiSort(arr);
+				break;
+			case 33:
+				sampleSort(arr);
+				break;
+			case 34:
+				inPlaceRadixLSDSort(arr);
 				break;
 			}
 

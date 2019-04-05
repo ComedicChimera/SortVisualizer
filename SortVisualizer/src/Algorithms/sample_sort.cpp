@@ -1,6 +1,5 @@
 #include "../sort.h"
 
-#include <iostream>
 #include <vector>
 
 namespace Sort {

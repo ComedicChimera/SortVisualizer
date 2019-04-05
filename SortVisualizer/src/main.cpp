@@ -29,16 +29,16 @@ void runSort(SortArray &arr, const std::string &algorithm) {
 
 std::string getAlgorithmName(std::string algID) {
 	if (algID == "Radix4") {
-		return "Radix LSD Sort (Base 4)";
+		return "LSD Radix Sort (Base 4)";
 	}
 	else if (algID == "Radix2") {
-		return "Radix LSD Sort (Base 2)";
+		return "LSD Radix Sort (Base 2)";
 	}
 	else if (algID == "RadixMSD") {
-		return "Radix MSD Sort";
+		return "MSD Radix Sort";
 	}
 	else if (algID == "Radix") {
-		return "Radix LSD Sort (Base 10)";
+		return "LSD Radix Sort (Base 10)";
 	}
 	else if (algID == "Time") {
 		return "Time Sort (Mul 4) + Insertion Sort";
@@ -54,6 +54,12 @@ std::string getAlgorithmName(std::string algID) {
 	}
 	else if (algID == "DoubleSelect") {
 		return "Double Selection Sort";
+	}
+	else if (algID == "InPlaceMerge") {
+		return "In Place Merge Sort";
+	}
+	else if (algID == "InPlaceRadix") {
+		return "In Place LSD Radix Sort (Base 10)";
 	}
 	else
 		return algID + " Sort";

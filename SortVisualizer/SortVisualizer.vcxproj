@@ -135,6 +135,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Algorithms\bitonic_sort.cpp" />
+    <ClCompile Include="src\Algorithms\sample_sort.cpp" />
+    <ClCompile Include="src\Algorithms\wiki_sort.cpp" />
     <ClCompile Include="src\Algorithms\cartesian_sort.cpp" />
     <ClCompile Include="src\Algorithms\comb_sort.cpp" />
     <ClCompile Include="src\Algorithms\cycle_sort.cpp" />
@@ -145,11 +147,13 @@
     <ClCompile Include="src\Algorithms\heap_sort.cpp" />
     <ClCompile Include="src\Algorithms\insertion_sort.cpp" />
     <ClCompile Include="src\Algorithms\intro_sort.cpp" />
+    <ClCompile Include="src\Algorithms\in_place_merge_sort.cpp" />
     <ClCompile Include="src\Algorithms\merge_sort.cpp" />
     <ClCompile Include="src\Algorithms\odd_even_sort.cpp" />
     <ClCompile Include="src\Algorithms\quick_sort.cpp" />
     <ClCompile Include="src\Algorithms\radix_sort.cpp" />
     <ClCompile Include="src\Algorithms\ripple_sort.cpp" />
+    <ClCompile Include="src\Algorithms\shatter_sort.cpp" />
     <ClCompile Include="src\Algorithms\shell_sort.cpp" />
     <ClCompile Include="src\Algorithms\simple_sort.cpp" />
     <ClCompile Include="src\Algorithms\smooth_sort.cpp" />
