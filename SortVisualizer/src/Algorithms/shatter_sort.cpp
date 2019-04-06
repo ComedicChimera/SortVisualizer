@@ -48,5 +48,7 @@ namespace Sort {
 				arr.draw(1, arrPos);
 			}
 		}
+
+		arr.draw(0);
 	}
 }

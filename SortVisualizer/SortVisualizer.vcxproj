@@ -147,7 +147,6 @@
     <ClCompile Include="src\Algorithms\heap_sort.cpp" />
     <ClCompile Include="src\Algorithms\insertion_sort.cpp" />
     <ClCompile Include="src\Algorithms\intro_sort.cpp" />
-    <ClCompile Include="src\Algorithms\in_place_merge_sort.cpp" />
     <ClCompile Include="src\Algorithms\merge_sort.cpp" />
     <ClCompile Include="src\Algorithms\odd_even_sort.cpp" />
     <ClCompile Include="src\Algorithms\quick_sort.cpp" />
