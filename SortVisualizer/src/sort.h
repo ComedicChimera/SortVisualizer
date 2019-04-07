@@ -67,8 +67,6 @@ namespace Sort {
 	void shatterSort(SortArray&);
 
 	void inPlaceMergeSort(SortArray&);
-	
-	void wikiSort(SortArray&);
 
 	void sampleSort(SortArray&);
 

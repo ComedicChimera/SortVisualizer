@@ -37,7 +37,6 @@ namespace Sort {
 			"Smooth",
 			"Shatter",
 			"InPlaceMerge",
-			"Wiki",
 			"Sample",
 			"InPlaceRadix"
 		};
@@ -145,12 +144,9 @@ namespace Sort {
 				inPlaceMergeSort(arr);
 				break;
 			case 32:
-				wikiSort(arr);
-				break;
-			case 33:
 				sampleSort(arr);
 				break;
-			case 34:
+			case 33:
 				inPlaceRadixLSDSort(arr);
 				break;
 			}

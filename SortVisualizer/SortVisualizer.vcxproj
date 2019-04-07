@@ -84,7 +84,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\CppLibs\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SFML_STATIC;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>C:\CppLibs\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -136,7 +136,6 @@
   <ItemGroup>
     <ClCompile Include="src\Algorithms\bitonic_sort.cpp" />
     <ClCompile Include="src\Algorithms\sample_sort.cpp" />
-    <ClCompile Include="src\Algorithms\wiki_sort.cpp" />
     <ClCompile Include="src\Algorithms\cartesian_sort.cpp" />
     <ClCompile Include="src\Algorithms\comb_sort.cpp" />
     <ClCompile Include="src\Algorithms\cycle_sort.cpp" />
